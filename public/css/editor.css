@@ -1,0 +1,594 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  --container-height: 90%;
+  --container-width: 90%;
+  --component-background: rgba(0, 0, 0, 0.45);
+}
+body {
+  /* background: url("https://4kwallpapers.com/images/wallpapers/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-3840x2160-1432.jpg"); */
+ /* background: url('https://firebasestorage.googleapis.com/v0/b/lasmo-dcd6a.appspot.com/o/pexels-adrien-daurenjou-14029101.jpg?alt=media&token=6a33f1da-2aff-4e62-8a7f-3610872c1064');*/
+  /* background: url('https://firebasestorage.googleapis.com/v0/b/lasmo-dcd6a.appspot.com/o/KB.jpg?alt=media&token=66877a1f-962d-428a-9a74-6f638d07be6a'); */
+  background: url('https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLes%20IMAGES%20TAILLES%20R%C3%89DUITES%2FBackgroud_Admin.jpg?alt=media&token=12e0b5fb-5dc9-4cca-b9e1-3f714f034f1d&_gl=1*1aqjiyh*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODkwODQ2Mi4yOS4xLjE2OTg5MDg0ODIuNDAuMC4w');
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  background: rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+  backdrop-filter: blur(30px);
+  border-radius: 15px;
+  width: var(--container-width);
+  height: var(--container-height);
+  position: relative;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+section.window--buttons {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+section.window--buttons .window__close {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #f00;
+  display: inline-block;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+section.window--buttons .window__close:hover {
+  transform: scale(1.2);
+}
+section.window--buttons .window__minimize {
+  margin-left: 5px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #f57c00;
+  display: inline-block;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+section.window--buttons .window__minimize:hover {
+  transform: scale(1.2);
+}
+section.window--buttons .window__maximize {
+  margin-left: 5px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #4caf50;
+  display: inline-block;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+section.window--buttons .window__maximize:hover {
+  transform: scale(1.2);
+}
+aside {
+  overflow: scroll;
+  height: 90%;
+  margin-top: 20px;
+  float: left;
+  width: 200px;
+  position: sticky;
+  top: 0;
+}
+aside button {
+  display: block;
+  margin-top: 7px;
+  margin-left: 15px;
+  padding: 0.7rem 4rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  background: none;
+  width: 170px;
+  border-radius: 10px;
+  border: 0;
+  color: white;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+aside button:hover {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(20px);
+}
+aside button.active {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(20px);
+}
+aside input[type="text"] {
+  font-size: 1.5rem;
+  width: 170px;
+  margin-left: 15px;
+  padding: 0.9rem;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  border: 0;
+  outline: 0;
+  text-align: center;
+  transition: 0.3s ease;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+
+.updates input[type="text"] {
+    font-size: 1.5rem;
+    width: 170px;
+    margin-left: 15px;
+    padding: 0.9rem;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    border: 0;
+    outline: 0;
+    text-align: center;
+    transition: 0.3s ease;
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+  }
+
+/* C'est à partir d'ici que j'ai commencé les modifications */
+/* MODIFICATION DES TEXTEAREA POUR LES ENTRES DES BLOGS*/ 
+.updates textarea[type="text"] {
+    font-size: 1.5rem;   
+    width: 100%; /* Réglez la largeur du textarea à 100% de la largeur de son conteneur */
+    max-width: 727px;
+    /* width: 727px; */
+    height: 300px;
+    display: flexbox;
+    margin-left: 15px;
+    padding: 0.9rem;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    border: 0;
+    outline: 0;
+    text-align: left;
+    transition: 0.3s ease;
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+}
+
+.updates .title {
+  height: 100px !important;
+}
+
+/* MODIFICATION DU BANNER */
+.ideas .fileup {
+    font-size: 1.5rem;
+    height: 400px;
+    width: 727px;
+    display: flexbox;
+    margin-left: 15px;
+    margin-right: 0;
+    padding: 0.9rem;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    border: 0;
+    outline: 0;
+    text-align: left;
+    transition: 0.3s ease;
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+}
+.blog-options {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+aside input[type="text"]::-webkit-input-placeholder {
+  text-align: center;
+}
+aside input[type="text"]:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+aside input[type="text"]::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+aside input[type="text"]:-ms-input-placeholder {
+  text-align: center;
+}
+aside .profile {
+  position: absolute;
+  left: 15px;
+  display: flex;
+  bottom: 15px;
+  align-items: center;
+}
+aside .profile .profile--pic {
+  width: 4rem;
+  border-radius: 15%;
+}
+aside .profile h1 {
+  color: #fff;
+  font-weight: 400;
+  margin-left: 10px;
+  font-size: 1.3rem;
+}
+.content {
+  /* width: ; */
+  color: white;
+  
+  padding: 15px;
+  border-radius: 30px;
+  height: 90%;
+  margin-right: 20px;
+  overflow: scroll;
+}
+.content .ideas {
+  display: flex;
+}
+.content .ideas .idea {
+  background: var(--component-background);
+  width: 50%;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  transition: 0.3s ease;
+}
+.content .ideas .idea:nth-of-type(2) {
+  margin-left: 15px;
+}
+.content .ideas .idea p {
+  color: gray;
+  font-size: 1.2rem;
+}
+.content .ideas .idea:hover {
+  transform: scale(1.06);
+}
+.content .updates {
+  margin-top: 20px;
+}
+.content .updates h1:nth-of-type(1) {
+  font-size: 2.2rem;
+}
+.content .updates .update {
+  width: 100%;
+  background: var(--component-background);
+  padding: 1.3rem 0.7rem;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.4s ease;
+}
+.content .updates .update:hover {
+  transform: scale(1.03);
+}
+.content .updates .update .updt-left {
+  display: flex;
+  align-items: center;
+}
+.content .updates .update .updt-left h1 {
+  font-size: 1.7rem;
+  margin-left: 10px;
+}
+.content .updates .update .updt-left img {
+  width: 35px;
+}
+.content .updates .update .buttons button {
+  background: none;
+  color: dodgerblue;
+  border: 0;
+  font-size: 1.6rem;
+  transition: 0.2s ease;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+.content .updates .update .buttons button:hover {
+  color: blue;
+}
+.content .trending {
+  margin-top: 20px;
+}
+.content .trending h1:nth-last-of-type(1) {
+  font-size: 2.2rem;
+}
+.content .trending .grid {
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: 25% 25% 25% 25%;
+  margin-top: 10px;
+  gap: 5px;
+}
+.content .trending .grid .grid__app {
+  background: var(--component-background);
+  padding: 13px;
+  display: inline-block;
+  display: flex;
+  height: fit-content;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+.content .trending .grid .grid__app.margin {
+  margin-top: 20px;
+}
+.content .trending .grid .grid__app h1 {
+  font-size: 1.7rem;
+}
+.content .trending .grid .grid__app button {
+  background: transparent;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  border-radius: 30px;
+  width: 30%;
+  cursor: pointer;
+}
+.content .links {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 50%);
+}
+.content .links a {
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+}
+.content .links a:nth-of-type(3), .content .links a:nth-of-type(4) {
+  margin-top: 7px;
+}
+@media (max-width: 768px) {
+  .content .trending .grid {
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(4, 25%);
+  }
+  aside {
+    display: none;
+  }
+  .title, .article {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 501px) {
+  .blog-options {
+    font-size: 10px;
+  }
+}
+
+
+.formation {
+  display: none;
+}
+.updates {
+  display: none;
+}
+#trending {
+  display: none;
+}
+#ideae {
+  display: none;
+}
+.articl {
+  display: block;
+}
+.articl1 {
+  display: block;
+}
+.articl2 {
+  display: flex;
+}
+#containerArticle{
+  display: none;
+}
+
+.blogation {
+  display: none;
+}
+
+/* AUTEUR ET DATE D'EDITION D'OUVRAGES*/
+.auteurOuvrage, .editionOuvrage, .titleOuvrage, .prixOuvrage, .googledriveOuvrage {
+  height: 40px !important;
+}
+.googledriveOuvrage {
+  height: 60px !important;
+}
+
+
+
+table {
+  width: 100%; /* Tableau prendra 100% de la largeur du contenant */
+  border-collapse: collapse; /* Fusionner les bordures de cellules */
+}
+
+th, td {
+  padding: 8px; /* Espacement interne des cellules */
+  text-align: center; /* Alignement du texte au centre */
+  border: 1px solid #000000; /* Bordures légères */
+}
+
+th {
+  background-color: #742929; /* Couleur de fond pour les en-têtes */
+}
+
+/* Ajoutez des styles pour la mise en page responsive */
+@media (max-width: 600px) {
+  table {
+      font-size: 12px; /* Réduire la taille de la police pour les petits écrans */
+  }
+
+  th, td {
+      padding: 6px; /* Réduire l'espacement interne pour les petits écrans */
+  }
+}
+
+
+
+/* POUR L'AJOUT DES PROJETS ET DES ACTES DE COLLOCQUES */
+.updateprojet textarea[type="text"] {
+  font-size: 1.5rem;   
+  width: 100%; /* Réglez la largeur du textarea à 100% de la largeur de son conteneur */
+  max-width: 727px;
+  /* width: 727px; */
+  height: 300px;
+  display: flexbox;
+  margin-left: 15px;
+  padding: 0.9rem;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  border: 0;
+  outline: 0;
+  text-align: left;
+  transition: 0.3s ease;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+}
+.updatecolloque textarea[type="text"] {
+  font-size: 1.5rem;   
+  width: 100%; /* Réglez la largeur du textarea à 100% de la largeur de son conteneur */
+  max-width: 727px;
+  /* width: 727px; */
+  height: 300px;
+  display: flexbox;
+  margin-left: 15px;
+  padding: 0.9rem;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  border: 0;
+  outline: 0;
+  text-align: left;
+  transition: 0.3s ease;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+
+
+.ideasEvent {
+  font-size: 1.5rem;
+  height: 400px;
+  width: 727px;
+  display: flexbox;
+  margin-left: 15px;
+  margin-right: 0;
+  padding: 0.9rem;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  border: 0;
+  outline: 0;
+  text-align: left;
+  transition: 0.3s ease;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+.EventContainer textarea[type="text"] {
+  font-size: 1.5rem;   
+  width: 100%; /* Réglez la largeur du textarea à 100% de la largeur de son conteneur */
+  max-width: 727px;
+  /* width: 727px; */
+  height: 70px;
+  display: flexbox;
+  margin-left: 15px;
+  padding: 0.9rem;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  border: 0;
+  outline: 0;
+  text-align: left;
+  transition: 0.3s ease;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+.EventContainer {
+  display: none;
+}
+
+
+
+
+
+
+/* Styles de base pour le tableau */
+.containerarchives table {
+  width: 100%;
+  max-width: 600px; /* Largeur maximale du tableau */
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.containerarchives th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+
+
+
+
