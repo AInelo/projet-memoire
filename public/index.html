@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="utf-8">
     <title>Fisc Predict</title>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLogoDGI.jpg?alt=media&token=93baf2b2-67f9-4e65-b62d-6895ad910a9b&_gl=1*hsrack*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzU2NjYuNDguMC4w" rel="icon">
+    <link
+        href="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLogoDGI.jpg?alt=media&token=93baf2b2-67f9-4e65-b62d-6895ad910a9b&_gl=1*hsrack*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzU2NjYuNDguMC4w"
+        rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -33,21 +37,25 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
-     
+
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
     <!-- Spinner End -->
-   
+
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><img class="" style="width: 150px; height: 50px; border-radius: 0%; margin-right: 4px;" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FDGI_img.jpg?alt=media&token=47e891d4-7f29-4e4b-b58a-80d6824e993f&_gl=1*1r6q6or*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzUxOTYuMzAuMC4w"></img>Fisc-P</h2>
+            <h2 class="m-0 text-primary"><img class=""
+                    style="width: 150px; height: 50px; border-radius: 0%; margin-right: 4px;"
+                    src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FDGI_img.jpg?alt=media&token=47e891d4-7f29-4e4b-b58a-80d6824e993f&_gl=1*1r6q6or*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzUxOTYuMzAuMC4w"></img>Fisc-P
+            </h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -61,13 +69,14 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="/simulateur" class="dropdown-item">Prévoir</a>
-                        
+
                         <a href="#faqs" class="dropdown-item">FAQs</a>
                     </div>
-                </div> 
+                </div>
                 <a href="https://chatpdf-yt.vercel.app/chat/599" class="nav-item nav-link">Chatbot IA</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Contact<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Contact<i
+                    class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -78,51 +87,68 @@
     <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div href="simulation.html" class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLes%20IMAGES%20TAILLES%20R%C3%89DUITES%2Fclose-up-team-hand-shake%20(1).jpg?alt=media&token=d1c22330-6464-402f-b5a4-8ca21cc9b13d&_gl=1*rawowf*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODg5MDMxNC4yOC4xLjE2OTg4OTE5NTEuMTIuMC4w"  alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                <img class="img-fluid"
+                    src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLes%20IMAGES%20TAILLES%20R%C3%89DUITES%2Fclose-up-team-hand-shake%20(1).jpg?alt=media&token=d1c22330-6464-402f-b5a4-8ca21cc9b13d&_gl=1*rawowf*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODg5MDMxNC4yOC4xLjE2OTg4OTE5NTEuMTIuMC4w"
+                    alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+                    style="background: rgba(24, 29, 56, .7);">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Les impôts</h5>
-                                <h1 class="display-3 text-white animated slideInDown">La Contribution Incontournable des 
+                                <h1 class="display-3 text-white animated slideInDown">La Contribution Incontournable des
                                     Citoyens pour un Avenir Meilleur du Pays</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Alors pourquoi avoir peur des impôts ?</p>
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLes%20IMAGES%20TAILLES%20R%C3%89DUITES%2Fhomme-ag%C3%A91.jpg?alt=media&token=e0ca9756-2276-4589-9b92-66bf640142ad&_gl=1*dft99j*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODg5MDMxNC4yOC4xLjE2OTg4OTE5ODkuNjAuMC4w" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                <img class="img-fluid"
+                    src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLes%20IMAGES%20TAILLES%20R%C3%89DUITES%2Fhomme-ag%C3%A91.jpg?alt=media&token=e0ca9756-2276-4589-9b92-66bf640142ad&_gl=1*dft99j*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODg5MDMxNC4yOC4xLjE2OTg4OTE5ODkuNjAuMC4w"
+                    alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+                    style="background: rgba(24, 29, 56, .7);">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Quelque soit votre status juridique</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Que vous soyez un individuel,un groupe d'intérêt </h1> 
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Quelque soit votre
+                                    status juridique</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Que vous soyez un individuel,un
+                                    groupe d'intérêt </h1>
                                 <p class="fs-5 text-white mb-4 pb-2">
                                     Vous pouvez contribuer au développement du pays en payant vos impôts</p>
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            
+
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLes%20IMAGES%20TAILLES%20R%C3%89DUITES%2FJeunes_travaillant.jpg?alt=media&token=9314b823-cca5-4dbb-9fd7-aaf205313848&_gl=1*1fb1c70*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODg5MDMxNC4yOC4xLjE2OTg4OTIwMjMuMjYuMC4w" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                <img class="img-fluid"
+                    src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLes%20IMAGES%20TAILLES%20R%C3%89DUITES%2FJeunes_travaillant.jpg?alt=media&token=9314b823-cca5-4dbb-9fd7-aaf205313848&_gl=1*1fb1c70*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODg5MDMxNC4yOC4xLjE2OTg4OTIwMjMuMjYuMC4w"
+                    alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+                    style="background: rgba(24, 29, 56, .7);">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Avec Fisc-Predict, la DGI vous aides à</h5>
-                                <h1 class="display-3 text-white animated slideInDown">avoir un oeil sur votre contribution social</h1>
-                                <p class="fs-5 text-white mb-4 pb-2"> Découvrez comment nous pouvons vous aider à développer 
-                                    vos connaissances sur la fiscalité et à prévoir en avance vos impôts pour ne plus êtres surpris.</p>
-                                <a href="#about" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Continuer</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Discuter avec nous</a>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Avec Fisc-Predict, la
+                                    DGI vous aides à</h5>
+                                <h1 class="display-3 text-white animated slideInDown">avoir un oeil sur votre
+                                    contribution social</h1>
+                                <p class="fs-5 text-white mb-4 pb-2"> Découvrez comment nous pouvons vous aider à
+                                    développer
+                                    vos connaissances sur la fiscalité et à prévoir en avance vos impôts pour ne plus
+                                    êtres surpris.</p>
+                                <a href="#about"
+                                    class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Continuer</a>
+                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Discuter avec
+                                    nous</a>
                             </div>
                         </div>
                     </div>
@@ -137,24 +163,26 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-4">
-                <div href="#team" class="col-lg-3 col-sm-6 wow fadeInUp Nature" data-wow-delay="0.1s" style="cursor: pointer !important;">
+                <div href="#team" class="col-lg-3 col-sm-6 wow fadeInUp Nature" data-wow-delay="0.1s"
+                    style="cursor: pointer !important;">
                     <div class="service-item text-center pt-3 Nature ">
                         <div class="p-4">
-                            
+
                             <i class="fa fa-3x fa-id-card text-primary mb-4" aria-hidden="true"></i>
                             <!-- <i class="fa fa-3x fa-calculator text-primary mb-4" aria-hidden="true"></i> -->
                             <!-- <i class="fa fa-3x fa-line-chart text-primary mb-4" aria-hidden="true"></i>  -->
                             <h5 class="mb-3">Faire Prévision</h5>
-                            <p> 
+                            <p>
                                 Prenez le contrôle de votre situation face aux impôts.</p>
                         </div>
                         <button class="mb-4  btn btn-primary py-3 px-5 mt-2">Appuyez</button>
                     </div>
                 </div>
-                <div href="#courses" class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s" style="cursor: pointer !important;" >
+                <div href="#courses" class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s"
+                    style="cursor: pointer !important;">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                           
+
                             <!-- <i class="fa fa-3x fa-user text-primary mb-4" aria-hidden="true"></i> -->
                             <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
                             <h5 class="mb-3">Discuter avec l'IA </h5>
@@ -163,7 +191,7 @@
                         <button class="mb-4  btn btn-primary py-3 px-5 mt-2">Appuyez</button>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" style="cursor: pointer !important;">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
@@ -171,17 +199,18 @@
                             <i class="fa fa-3x  fa-users text-primary mb-4" aria-hidden="true"></i>
                             <h5 class="mb-3">Comprendre</h5>
                             <p>
-                               Etudiez le code de manière amusante avec le chatbot IA .                                
+                                Etudiez le code de manière amusante avec le chatbot IA .
                             </p>
                         </div>
-                        <button href="https://chatpdf-yt.vercel.app/chat/599" class="mb-4  btn btn-primary py-3 px-5 mt-2">Appuyez</button>
+                        <button href="https://chatpdf-yt.vercel.app/chat/599"
+                            class="mb-4  btn btn-primary py-3 px-5 mt-2">Appuyez</button>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s" style="cursor: pointer !important;">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            
+
                             <i class="fa fa-3x  fa-users text-primary mb-4" aria-hidden="true"></i>
 
                             <h5 class="mb-3">FAQs </h5>
@@ -206,49 +235,51 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLes%20IMAGES%20TAILLES%20R%C3%89DUITES%2FImage%20de%20description%20Fisc%20(2)%20(1)%20(1).jpg?alt=media&token=7ccfc727-756c-4f31-87b1-bba8784f70a8&_gl=1*1pgwa61*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODg5MDMxNC4yOC4xLjE2OTg4OTIwNTIuNjAuMC4w" alt="" style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100"
+                            src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Les%20images%20modifi%C3%A9es%2Fphotomenace.png?alt=media&token=de693463-6510-47cf-9f2f-dcf6c94d8521&_gl=1*tmcf5v*_ga*MTIyNDI2NDkwOC4xNjk3ODkwOTUz*_ga_CW55HF8NVT*MTY5OTAxNzA1MC4zLjEuMTY5OTAxNzk5OC40My4wLjA."
+                            alt="" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">Discutons</h6>
                     <h1 class="mb-4">Pourquoi avez-vous peur des impôts ?</h1>
-                    <p class="mb-4">Les impôts, un sujet souvent redouté, mais 
-                        pourquoi avons-nous tant peur de cette obligation fiscale ? 
-                        Nous allons démystifier le mythe de la 
-                        fiscalité et vous montrer pourquoi il n'y a aucune raison 
-                        d'avoir peur des impôts. 
-                        </p>
+                    <p class="mb-4">Les impôts, un sujet souvent redouté, mais
+                        pourquoi avons-nous tant peur de cette obligation fiscale ?
+                        Nous allons démystifier le mythe de la
+                        fiscalité et vous montrer pourquoi il n'y a aucune raison
+                        d'avoir peur des impôts.
+                    </p>
 
                     <p class="mb-4">
-                       <strong>Pourquoi Payer ses impôts ?</strong>  <br>
-                         <br>
-                         <strong>♣ Investissement Collectif <br> </strong>
-                            Chaque franc que vous contribuez est un 
-                            pas de plus vers l'amélioration de notre qualité de vie, 
-                            avec des écoles de qualité, des soins de santé accessibles, 
-                            des routes en bon état et une sécurité publique efficace. <br>
-                            
-                        <strong>♣ Soutien Social<br> </strong>
-                            Plutôt que d'avoir peur, comprenez que les impôts 
-                            jouent un rôle clé dans la construction d'une société plus équitable et plus unie. <br>
+                        <strong>Pourquoi Payer ses impôts ?</strong> <br>
+                        <br>
+                        <strong>♣ Investissement Collectif <br> </strong>
+                        Chaque franc que vous contribuez est un
+                        pas de plus vers l'amélioration de notre qualité de vie,
+                        avec des écoles de qualité, des soins de santé accessibles,
+                        des routes en bon état et une sécurité publique efficace. <br>
 
-                            
+                        <strong>♣ Soutien Social<br> </strong>
+                        Plutôt que d'avoir peur, comprenez que les impôts
+                        jouent un rôle clé dans la construction d'une société plus équitable et plus unie. <br>
+
+
                         <strong>♣ Infrastructure et Croissance Économique <br></strong>
-                            Vous contribuez à bâtir un avenir prospère chaque fois que vous payez vos impôts. <br>
+                        Vous contribuez à bâtir un avenir prospère chaque fois que vous payez vos impôts. <br>
 
                         <strong>♣ L'Équité en Action <br> </strong>
-                            Les impôts progressifs sont conçus pour réduire les inégalités. 
-                            Ils contribuent à un partage plus équitable des ressources, 
-                            garantissant que chacun puisse bénéficier des services publics et 
-                            des avantages sociaux. <br>
-                            Alors, la prochaine fois que vous remplirez votre déclaration fiscale, 
-                            rappelez-vous que ce n'est pas une charge, mais une occasion de construire 
-                            un avenir plus radieux pour tous. Ne craignez pas les impôts, embrassez-les 
-                            comme un moyen de faire une différence positive dans le monde qui vous entoure.
+                        Les impôts progressifs sont conçus pour réduire les inégalités.
+                        Ils contribuent à un partage plus équitable des ressources,
+                        garantissant que chacun puisse bénéficier des services publics et
+                        des avantages sociaux. <br>
+                        Alors, la prochaine fois que vous remplirez votre déclaration fiscale,
+                        rappelez-vous que ce n'est pas une charge, mais une occasion de construire
+                        un avenir plus radieux pour tous. Ne craignez pas les impôts, embrassez-les
+                        comme un moyen de faire une différence positive dans le monde qui vous entoure.
 
 
 
-                        </p>
+                    </p>
                     <!-- <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
                             <p style="cursor: pointer !important;" class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Expert qualifiés</p>
@@ -740,117 +771,131 @@
 
     <section id="faqs" class="faq-section">
         <div class="container">
-          <div class="row">
-                            <!-- ***** FAQ Start ***** -->
-                            <div class="col-md-6 offset-md-3">
-        
-                                <div class="faq-title text-center pb-3">
-                                    <h2>FAQs</h2>
-                                </div>
-                            </div>
-                            <div class="col-md-6 offset-md-3">
-                                <div class="faq" id="accordion">
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeading-1">
-                                            <div class="mb-0">
-                                                <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-1" data-aria-expanded="true" data-aria-controls="faqCollapse-1">
-                                                    <span class="badge">1</span>Qu'est-ce que le fisc-predict et comment ça fonctionne ?
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1" data-parent="#accordion">
-                                            <div class="card-body">
-                                                <p>Le fisc-predict est un stimulateur d'impôts 
-                                                    en ligne conçu pour vous aider à estimer vos impôts, 
-                                                    à comprendre comment fonctionne le système fiscal béninois , 
-                                                    et à planifier vos finances en conséquence. Il 
-                                                    utilise des informations sur vos revenus, déductions, 
-                                                    et d'autres facteurs pour calculer approximativement 
-                                                    ce que vous pourriez devoir au fisc ou ce que vous 
-                                                    pourriez recevoir en remboursement.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeading-2">
-                                            <div class="mb-0">
-                                                <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-2" data-aria-expanded="false" data-aria-controls="faqCollapse-2">
-                                                    <span class="badge">2</span> De quelles informations ai-je besoin pour utiliser fisc-predict?
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#accordion">
-                                            <div class="card-body">
-                                                <p>Pour utiliser fisc-predict, vous aurez généralement 
-                                                    besoin de fournir des détails sur vos revenus, votre 
-                                                    situation juridique , et d'autres informations financières 
-                                                    pertinentes. Le fisc-predict vous guidera tout au long du 
-                                                    processus et vous demandera les informations nécessaires.
-                                                    </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeading-3">
-                                            <div class="mb-0">
-                                                <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-3" data-aria-expanded="false" data-aria-controls="faqCollapse-3">
-                                                    <span class="badge">3</span>Est-ce que l'utilisation du fisc-predict est gratuite ?
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#accordion">
-                                            <div class="card-body">
-                                                <p>Le fisc-predict offre une version de base gratuite pour calculer vos impôts.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeading-4">
-                                            <div class="mb-0">
-                                                <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-4" data-aria-expanded="false" data-aria-controls="faqCollapse-4">
-                                                    <span class="badge">4</span> Les résultats du fisc-prédit sont-ils toujours exacts ?
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#accordion">
-                                            <div class="card-body">
-                                                <p>Le fisc-predict fournit des estimations basées sur les 
-                                                    informations que vous fournissez. Ils ne remplacent pas 
-                                                    les conseils fiscaux professionnels. Les résultats sont 
-                                                    généralement précis dans la mesure où les données entrées 
-                                                    sont exactes, mais il est recommandé de consulter un 
-                                                    professionnel en fiscalité pour les situations fiscales 
-                                                    complexes.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeading-5">
-                                            <div class="mb-0">
-                                                <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-5" data-aria-expanded="false" data-aria-controls="faqCollapse-5">
-                                                    <span class="badge">5</span> Quand devrais-je utiliser le fisc-predict?
-                                                </h5>
-                                            </div>
-                                        </div>
-                                        <div id="faqCollapse-5" class="collapse" aria-labelledby="faqHeading-5" data-parent="#accordion">
-                                            <div class="card-body">
-                                                <p> Vous pouvez utiliser disc-predict tout au 
-                                                    long de l'année pour planifier vos finances. 
-                                                    Cependant, il est particulièrement utile en période 
-                                                    de déclaration d'impôts, généralement entre janvier 
-                                                    et avril, lorsque vous devez produire votre déclaration 
-                                                    fiscale. Utiliser un fisc-predict en avance peut vous 
-                                                    aider à anticiper et à préparer votre situation fiscale.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+            <div class="row">
+                <!-- ***** FAQ Start ***** -->
+                <div class="col-md-6 offset-md-3">
 
+                    <div class="faq-title text-center pb-3">
+                        <h2>FAQs</h2>
+                    </div>
+                </div>
+                <div class="col-md-6 offset-md-3">
+                    <div class="faq" id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="faqHeading-1">
+                                <div class="mb-0">
+                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-1"
+                                        data-aria-expanded="true" data-aria-controls="faqCollapse-1">
+                                        <span class="badge">1</span>Qu'est-ce que le fisc-predict et comment ça
+                                        fonctionne ?
+                                    </h5>
                                 </div>
                             </div>
-                          </div>
+                            <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>Le fisc-predict est un stimulateur d'impôts
+                                        en ligne conçu pour vous aider à estimer vos impôts,
+                                        à comprendre comment fonctionne le système fiscal béninois ,
+                                        et à planifier vos finances en conséquence. Il
+                                        utilise des informations sur vos revenus, déductions,
+                                        et d'autres facteurs pour calculer approximativement
+                                        ce que vous pourriez devoir au fisc ou ce que vous
+                                        pourriez recevoir en remboursement.</p>
+                                </div>
+                            </div>
                         </div>
+                        <div class="card">
+                            <div class="card-header" id="faqHeading-2">
+                                <div class="mb-0">
+                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-2"
+                                        data-aria-expanded="false" data-aria-controls="faqCollapse-2">
+                                        <span class="badge">2</span> De quelles informations ai-je besoin pour utiliser
+                                        fisc-predict?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>Pour utiliser fisc-predict, vous aurez généralement
+                                        besoin de fournir des détails sur vos revenus, votre
+                                        situation juridique , et d'autres informations financières
+                                        pertinentes. Le fisc-predict vous guidera tout au long du
+                                        processus et vous demandera les informations nécessaires.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="faqHeading-3">
+                                <div class="mb-0">
+                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-3"
+                                        data-aria-expanded="false" data-aria-controls="faqCollapse-3">
+                                        <span class="badge">3</span>Est-ce que l'utilisation du fisc-predict est
+                                        gratuite ?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>Le fisc-predict offre une version de base gratuite pour calculer vos impôts.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="faqHeading-4">
+                                <div class="mb-0">
+                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-4"
+                                        data-aria-expanded="false" data-aria-controls="faqCollapse-4">
+                                        <span class="badge">4</span> Les résultats du fisc-prédit sont-ils toujours
+                                        exacts ?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>Le fisc-predict fournit des estimations basées sur les
+                                        informations que vous fournissez. Ils ne remplacent pas
+                                        les conseils fiscaux professionnels. Les résultats sont
+                                        généralement précis dans la mesure où les données entrées
+                                        sont exactes, mais il est recommandé de consulter un
+                                        professionnel en fiscalité pour les situations fiscales
+                                        complexes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="faqHeading-5">
+                                <div class="mb-0">
+                                    <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-5"
+                                        data-aria-expanded="false" data-aria-controls="faqCollapse-5">
+                                        <span class="badge">5</span> Quand devrais-je utiliser le fisc-predict?
+                                    </h5>
+                                </div>
+                            </div>
+                            <div id="faqCollapse-5" class="collapse" aria-labelledby="faqHeading-5"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    <p> Vous pouvez utiliser disc-predict tout au
+                                        long de l'année pour planifier vos finances.
+                                        Cependant, il est particulièrement utile en période
+                                        de déclaration d'impôts, généralement entre janvier
+                                        et avril, lorsque vous devez produire votre déclaration
+                                        fiscale. Utiliser un fisc-predict en avance peut vous
+                                        aider à anticiper et à préparer votre situation fiscale.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-      
+
     <!-- faq End -->
 
     <!-- Footer Start -->
@@ -858,7 +903,9 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <link href="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLogoDGI.jpg?alt=media&token=93baf2b2-67f9-4e65-b62d-6895ad910a9b&_gl=1*hsrack*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzU2NjYuNDguMC4w" rel="icon">
+                    <link
+                        href="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLogoDGI.jpg?alt=media&token=93baf2b2-67f9-4e65-b62d-6895ad910a9b&_gl=1*hsrack*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzU2NjYuNDguMC4w"
+                        rel="icon">
 
                     <!-- <h4 class="text-white mb-3">Des Liens Rapides</h4>
                     <a class="btn btn-link" href="#about">A propos du SEI</a> -->
@@ -879,13 +926,15 @@
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Newsletter</h4>
                     <p>Restez informer de nos dernières activités</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input id="mailNewsletter" class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre email">
-                        <button type="button" id="newsletter" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button>
+                        <input id="mailNewsletter" class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="Votre email">
+                        <button type="button" id="newsletter"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button>
                     </div>
                 </div>
             </div>
@@ -925,9 +974,9 @@
     <!-- EXTERNAL JAVASCRIPT -->
     <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    
-    
-    
+
+
+
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
