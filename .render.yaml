@@ -1,0 +1,5 @@
+services:
+  - name: fiscpredict_project_mvp
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
