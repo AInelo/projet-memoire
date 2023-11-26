@@ -13,4 +13,4 @@ npm install
 dans le package JSON
 
 3. Pour Faire toutes modifications, veuillez le faire
-sur une 
+sur une autre
