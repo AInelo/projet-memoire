@@ -9,5 +9,5 @@ vous devez faire un
 npm install
 ```
 
-2. Pour avoir toutes les dépendances node (les node_modules)   
+2. Pour avoir toutes les dépendances node    
 
