@@ -15,31 +15,31 @@ app.use(fileupload());
 //     res.sendFile(path.join(initial_path, "index.html"));
 // })
 app.get('/simulateur', (req, res) => {
-    res.sendFile(path.join(initial_path, "simulation.html"));
+    res.sendFile(path.join(initial_path, "./public/simulation.html"));
 })
 
-app.get('/Administrateur', (req, res) =>  {
-    res.sendFile(path.join(initial_path, "Administrator.html"));
-} )
+app.get('/Administrateur', (req, res) => {
+    res.sendFile(path.join(initial_path, "./public/Administrator.html"));
+})
 
-app.get('/simulateur_irf', (req, res) =>  {
-    res.sendFile(path.join(initial_path, "simulateur_irf.html"));
-} )
+app.get('/simulateur_irf', (req, res) => {
+    res.sendFile(path.join(initial_path, "./public/simulateur_irf.html"));
+})
 
-app.get('/simulateur_iba', (req, res) =>  {
-    res.sendFile(path.join(initial_path, "simulateur_iba.html"));
-} )
+app.get('/simulateur_iba', (req, res) => {
+    res.sendFile(path.join(initial_path, "./public/simulateur_iba.html"));
+})
 
-app.get('/simulateur_vps', (req, res) =>  {
-    res.sendFile(path.join(initial_path, "simulateur_vps.html"));
-} )
+app.get('/simulateur_vps', (req, res) => {
+    res.sendFile(path.join(initial_path, "./public/simulateur_vps.html"));
+})
 
-app.get('/simulateur_is', (req, res) =>  {
-    res.sendFile(path.join(initial_path, "simulateur_is.html"));
-} )
+app.get('/simulateur_is', (req, res) => {
+    res.sendFile(path.join(initial_path, "./public/simulateur_is.html"));
+})
 
 
-  
+
 
 
 app.use((req, res) => {
@@ -53,14 +53,14 @@ app.use((req, res) => {
 
 
 
- const ipAdress = "10.61.16.247";
- const port = 4000;
+const ipAdress = "10.61.16.247";
+const port = 4000;
 const Port = process.env.PORT || 3000;
 
 
 
- app.listen(Port, () =>{
-     console.log(`Le serveur écoute sur localhost:${Port}.....`);
-  });
+app.listen(Port, () => {
+    console.log(`Le serveur écoute sur localhost:${Port}.....`);
+});
 
 
