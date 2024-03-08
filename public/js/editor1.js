@@ -513,6 +513,7 @@ Btncolloc.addEventListener("click", () => {
 /* CODE JS POUR LES FONCTIONS ET ROLES REEL DE L'EDITEUR" */
 /*COTE IMAGES DU BLOG */
 
+
 const blogTitleField = document.querySelector(".title");
 const articleFeild = document.querySelector(".article");
 
