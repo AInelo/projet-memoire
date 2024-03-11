@@ -226,6 +226,7 @@ const createNewsletter = (MAILS) => {
       // OuvrageSection.innerHTML = textToInsert ;  https://assets.codepen.io/4787486/trees.png
     } else {
       console.error("L'élément blogSection est null.");
+      console.log
     }
   } else {
     console.error("L'objet data est indéfini.");

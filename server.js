@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const fileupload = require("express-fileupload");
+const browserSync = require("browser-sync")
 
 let initial_path = path.join(__dirname, "public");
 
@@ -44,9 +45,21 @@ app.use((req, res) => {
   res.json("404");
 });
 
-const ipAdress = "10.61.16.247";
+const ipAdress = "192.168.1.247";
 const port = 4000;
 const Port = process.env.PORT || 3000;
+
+app.listen(Port, ipAdress, () => {
+  console.log(`Le serveur tourne aussi sur: http://${ipAdress}:${Port} `);
+
+  // browserSync({
+  //   proxy: `http://${ipAdress}:${Port}`,
+  //   files: ["public/**/*"],
+  //   port: Port + 1,
+  //   open: false
+  // });
+
+})
 
 app.listen(Port, () => {
   console.log(`Le serveur écoute sur localhost:${Port}.....`);

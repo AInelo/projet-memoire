@@ -22,21 +22,20 @@ document.addEventListener("DOMContentLoaded", function () {
             const resultat10 = resultat*10;
             
              // Efface le contenu précédent
-             voletResultatPrevision.innerHTML = '';
+            voletResultatPrevision.innerHTML = '';
 
-              textToInsert = `${resultat} FCFA`;
-              textToInsert5 = `${resultat5} FCFA`;
-              textToInsert10 = `${resultat10} FCFA`;
+            textToInsert = `${resultat} FCFA`;
+            textToInsert5 = `${resultat5} FCFA`;
+            textToInsert10 = `${resultat10} FCFA`;
 
-             voletResultatPrevision.insertAdjacentHTML("beforeend", textToInsert);
-             voletResultatPrevision5.insertAdjacentHTML("beforeend", textToInsert5);
-             voletResultatPrevision10.insertAdjacentHTML("beforeend", textToInsert10);
+            voletResultatPrevision.insertAdjacentHTML("beforeend", textToInsert);
+            voletResultatPrevision5.insertAdjacentHTML("beforeend", textToInsert5);
+            voletResultatPrevision10.insertAdjacentHTML("beforeend", textToInsert10);
             
              // POUR FAIRE DISPARAITRE L'input
-             machineCalcul.style.display = "none";
-             resultatPrevision.style.display = "block";
+            machineCalcul.style.display = "none";
+            resultatPrevision.style.display = "block";
               // Réinitialise le champ d'entrée
-              
             montantLoyer.value = '';
         } else {
             voletResultatPrevision.textContent = "Veuillez entrer un montant de loyer valide.";
@@ -50,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
         const machineCalcul = document.getElementById('machineCalcul');
         const resultatPrevision = document.getElementById('resultatPrevision');
-       
+
         btnRepriseIrfCalculer.addEventListener("click", function () {
                 machineCalcul.style.display = "block";
                 resultatPrevision.style.display = "none" ;

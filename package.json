@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "startx": "nodemon server.js",
+    "start":  "nodemon server.js --ext js,html --exec 'browser-sync start --proxy http://localhost:3000 --files \"public/**/*\"'"
   },
   "author": "Lionel_TOTON",
   "license": "ISC",
@@ -16,5 +17,8 @@
     "firebase": "^8.10.1",
     "nodemailer": "^6.9.6",
     "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.2"
   }
 }
