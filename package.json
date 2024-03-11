@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server"
+    "start": "npm run build:css && nodemon server.js",
+    "build:css": "tailwindcss build public/css/build.css -o public/css/styles.css"
   },
   "author": "Lionel_TOTON",
   "license": "ISC",
