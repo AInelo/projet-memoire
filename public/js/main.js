@@ -168,7 +168,7 @@
 
 const btnNarure = document.querySelector(".Nature");
 
-btnNarure.addEventListener('click', () => {
+// btnNarure.addEventListener('click', () => {
 
-    window.location.href = "/simulateur";
-} )
+//     window.location.href = "/simulateur";
+// } )

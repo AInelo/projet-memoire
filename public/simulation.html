@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Fisc Predict</title>
+    <title>DoPlan | New Plan</title>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -11,7 +11,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLogoDGI.jpg?alt=media&token=93baf2b2-67f9-4e65-b62d-6895ad910a9b&_gl=1*hsrack*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzU2NjYuNDguMC4w" rel="icon">
+    <link href="./img/onglet.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +31,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -46,7 +47,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><img class="" style="width: 170px; height: 50px; border-radius: 0%; margin-right: 4px;" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FDGI_img.jpg?alt=media&token=47e891d4-7f29-4e4b-b58a-80d6824e993f&_gl=1*1r6q6or*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzUxOTYuMzAuMC4w"></img></h2>
+            <h2 class="m-0 text-primary"><img class="" style="width: 100px; height: 50px; border-radius: 0%; margin-right: 4px;" src="./img/onglet.png"></img>DoPlan</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -74,7 +75,7 @@
 
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5">
+    <!-- <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div href="simulation.html" class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLes%20IMAGES%20TAILLES%20R%C3%89DUITES%2Fclose-up-team-hand-shake%20(1).jpg?alt=media&token=d1c22330-6464-402f-b5a4-8ca21cc9b13d&_gl=1*rawowf*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODg5MDMxNC4yOC4xLjE2OTg4OTE5NTEuMTIuMC4w"  alt="">
@@ -128,48 +129,25 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Carousel End -->
 
 
 
 
 
-     <!-- Choix des types d'impôts -->
-     <div class="container-xxl py-5 fadeInUp" data-wow-delay="0.05s" id="testimonial">
+    <!-- Choix des types d'impôts -->
+    <!-- <div class="container-xxl py-5 fadeInUp" data-wow-delay="0.05s" id="testimonial">
         <div class="container">
             <div class="text-center">
                 <h6 class="section-title bg-white text-center text-primary px-3">Les Types d'impôt</h6>
-                <!-- <h1 class="mb-5">Nos partenaires!</h1> -->
+                
             </div>
-
-            <!-- <div class="containerarchives" >
-                <table>
-                    <tr>
-                        <th id="choixJune" style="cursor: pointer;" >Juin    </th>
-                        <th   id="choixDecember" style="cursor: pointer;" >Décembre</th>
-                    </tr>
-                </table> <br>
-            </div>
-            <br> -->
-
-            <!-- class="owl-carousel testimonial-carousel position-relative"    class="testimonial-item text-center"-->
-
-            <!-- <div class="testimonial-carousel" style="display: flex;">
-                <div class="testimonial-item text-center" style="flex: 1;"> -->
-
-                    <!-- <div class="testimonial-carousel" style="display: flex; flex-direction: row;">
-                        <div class="testimonial-item text-center" style="flex: 1; width: auto;"> -->
-
-
-
-            
-                                               
-            <div  class="owl-carousel testimonial-carousel "  >
+            <div  class="owl-carousel testimonial-carousel"  >
                 <div class="testimonial-item text-center" >
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2Fimage_imp%C3%B4ts.png?alt=media&token=c691c2bf-50aa-4c52-8fab-5875c522b00d&_gl=1*1ca2uiy*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODgzMTgzNS4yNi4xLjE2OTg4MzE5NDYuNDQuMC4w" style="width: 80px; height: 80px;">
                     <h5 class="mb-0">Impôts des PARTICULIERS</h5>
-                   <button id="impotParticulier" class="btn btn-primary w-100 py-2 md-4" style="cursor: pointer !important; color: red;" >AFFICHER</button>
+                    <button id="impotParticulier" class="btn btn-primary w-100 py-2 md-4" style="cursor: pointer !important; color: red;" >AFFICHER</button>
                     <div class="testimonial-text bg-light text-center p-4">
                     <p class="mb-0">Ils sont essentiels à la stabilité économique et au financement des services gouvernementaux.
                         </p>
@@ -199,18 +177,14 @@
             <div class="nav-arrow right-arrow" id="next-arrow">&gt;</div>
             
         </div>
-    </div>
+    </div> -->
     <!-- Choix des types d'impôts -->
 
-  
-     <!-- CHOIX DES IMPOTS  -->
 
-                    
-    
+    <!-- CHOIX DES IMPOTS  -->
 
-    
     <!-- Impot Particuliers -->
-    <div class="container-xxl py-5 voletParticulier" id="courses">
+    <!-- <div class="container-xxl py-5 voletParticulier" id="courses">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">IMPOTS</h6>
@@ -232,7 +206,6 @@
                             </div>
                             <h5 class="mb-4">Impôt sur le Revenu Foncier</h5> <br>
                         </div>
-                       
                     </div>
                 </div>
 
@@ -252,7 +225,6 @@
                             </div>
                             <h5 class="mb-4">Taxe sur la Plus Value Immobilière</h5> <br>
                         </div>
-                       
                     </div>
                 </div>            
 
@@ -271,7 +243,7 @@
                             </div>
                             <h5 class="mb-4">Droit d'Enregistrement (Bien-Immeuble)</h5> <br>
                         </div>
-                       
+
                     </div>
                 </div> 
 
@@ -298,12 +270,12 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Impot Particuliers -->
 
 
     <!-- Impot Entreprise -->
-    <div class="container-xxl py-5 voletEntreprise" id="courses">
+    <!-- <div class="container-xxl py-5 voletEntreprise" id="courses">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">IMPOTS</h6>
@@ -416,12 +388,12 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Impot Entreprise -->
 
 
     <!-- Impot ONG -->
-    <div class="container-xxl py-5 voletOng" id="courses">
+    <!-- <div class="container-xxl py-5 voletOng" id="courses">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">IMPOTS</h6>
@@ -449,7 +421,7 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Impot ONG -->
     
 
