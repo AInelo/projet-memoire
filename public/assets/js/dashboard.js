@@ -176,7 +176,7 @@ $(function () {
     },
     series: [
       {
-        name: "Earnings",
+        name: "Evolution",
         color: "#00a99e",
         data: [25, 66, 20, 40, 12, 58, 20],
       },
