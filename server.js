@@ -50,7 +50,7 @@ const port = 4000;
 const Port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-  console.log(`Le serveur tourne aussi sur: http://${ipAdress}:${port} `);
+  console.log(`Le serveur tourne aussi sur: http://localhost:${port} `);
 
   // browserSync({
   //   proxy: `http://${ipAdress}:${Port}`,
