@@ -45,7 +45,7 @@ app.use((req, res) => {
   res.json("404");
 });
 
-const ipAdress = "192.168.1.106";
+const ipAdress = "192.168.1.247";
 const port = 4000;
 const Port = process.env.PORT || 3000;
 
