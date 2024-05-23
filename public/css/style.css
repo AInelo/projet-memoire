@@ -630,7 +630,16 @@
     }
 }
 
-.hoverTheButton:hover {
+/* .hoverTheButton:hover {
+   
+} */
+
+.ServiceLink:active .hoverTheButton {
+    background-color: #fdfdfd!important;
+    color: #329A87!important;
+}
+
+.ServiceLink:hover .hoverTheButton {
     background-color: #fdfdfd!important;
     color: #329A87!important;
 }
