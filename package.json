@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "npm run build:css && nodemon server.js",
     "build:css": "tailwindcss build public/css/build.css -o public/css/styles.css"
