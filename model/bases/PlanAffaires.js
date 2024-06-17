@@ -1,5 +1,5 @@
 // Exemple de classe PlanAffairesModel pour l'interaction avec la base de données
-import { execute } from '../config/ConnexionDb';
+import { execute } from '../../db/ConnexionDb';
 
 class PlanAffairesModel {
     static async createPlanAffaires(section, domaine, donneesFinancieres) {
