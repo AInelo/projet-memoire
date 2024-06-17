@@ -1,5 +1,5 @@
 services:
-  - name: fiscpredict_project_mvp
+  - name: projet-memoire
     env: node
     buildCommand: npm install
     startCommand: npm start
