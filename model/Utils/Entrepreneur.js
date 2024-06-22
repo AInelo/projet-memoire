@@ -25,6 +25,8 @@ class Entrepreneur {
         // Logique pour ajouter des modèles
     }
 
+    
+
     creerPlanAffaire() {
         const plan = new PlanAffaires();
         this.plansAffaire.push(plan);

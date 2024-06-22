@@ -6,11 +6,11 @@ class DataBase {
             host: 'localhost',
             user: 'root',
             password: 'lionel',
-            database: 'database_name'
+            database: 'business_plan'
         });
     }
     
-    async query(sql, params) {
+    async execute(sql, params) {
         try {
             const [rows, fields] = await this.pool.promise().query(sql, params);
             return rows;
@@ -21,4 +21,4 @@ class DataBase {
     }
 }
 
-export default new DataBase();
+export default DataBase;
