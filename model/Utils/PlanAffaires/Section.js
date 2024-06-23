@@ -77,6 +77,7 @@ class Section {
     ajouterTableau(nomTableau) {
         const tableau = new Tableau(nomTableau);
         this.tableaux.push(tableau);
+        return tableau
     }
 
     ajouterSectionContenu(titreSousSection, contenuSousSection) {

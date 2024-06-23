@@ -6,7 +6,7 @@ class DataBase {
             host: 'localhost',
             user: 'root',
             password: 'lionel',
-            database: 'business_plan'
+            database: 'business'
         });
     }
     

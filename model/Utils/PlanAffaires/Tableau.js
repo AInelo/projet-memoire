@@ -58,6 +58,7 @@ class Tableau {
     ajouterLigne() {
         const ligne = new Ligne();
         this.lignes.push(ligne);
+        return ligne
     }
 
     afficherDetails() {

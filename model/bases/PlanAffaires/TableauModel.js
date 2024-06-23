@@ -3,11 +3,12 @@ import LigneModel from './LigneModel.js';
 
 
 class TableauModel {
-    constructor() {
-        this.db = new DataBase();
-    }
+    // constructor() {
+    //     this.db = new DataBase();
+    // }
+    static db = new DataBase();
 
-    async createTableau(sectionId, tableau) {
+    static async createTableau(sectionId, tableau) {
         const { nomTableau, lignes } = tableau;
         try {
             const sql = `

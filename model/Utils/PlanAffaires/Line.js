@@ -26,9 +26,10 @@ class Ligne {
         this.elements = [];
     }
 
-    ajouterElement(element) {
+    ajouterElementLigne(element) {
         const elementLigne = new ElementLigne(element);
         this.elements.push(elementLigne);
+        return elementLigne
     }
 
     afficherElements() {

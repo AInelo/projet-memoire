@@ -2,11 +2,11 @@ import DataBase from '../../../db/ConnexionDb.js';
 import ElementLigneModel from './ElementLigneModel.js';
 
 class LigneModel {
-    constructor() {
-        this.db = new DataBase();
-    }
+    // constructor() {
+    //     this.db = new DataBase();
+    // }
 
-    async createLigne(tableauId, ligne) {
+    static async createLigne(tableauId, ligne) {
         try {
             const sql = `
                 INSERT INTO ligne (tableau_id)

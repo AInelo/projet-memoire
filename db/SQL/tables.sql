@@ -34,6 +34,23 @@ CREATE TABLE membre_startup (
 
 
 
+
+
+
+-- CREATE TABLE plan_affaire (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     entrepreneur_id INT,
+--     plan_affaire_nom VARCHAR(255),
+--     domaine VARCHAR(255),
+--     chemin_acces_pdf_file VARCHAR(255),
+--     chemin_acces_word_file VARCHAR(255),
+--     chemin_acces_donnees_financiere VARCHAR(255),
+--     chemin_acces_donnees_financiere_traite VARCHAR(255),
+--     FOREIGN KEY (entrepreneur_id) REFERENCES entrepreneur(id)
+-- );
+
+
+
 CREATE TABLE plan_affaire (
     id INT AUTO_INCREMENT PRIMARY KEY,
     entrepreneur_id INT,
@@ -42,9 +59,9 @@ CREATE TABLE plan_affaire (
     chemin_acces_pdf_file VARCHAR(255),
     chemin_acces_word_file VARCHAR(255),
     chemin_acces_donnees_financiere VARCHAR(255),
-    chemin_acces_donnees_financiere_traite VARCHAR(255),
-    FOREIGN KEY (entrepreneur_id) REFERENCES entrepreneur(id)
+    chemin_acces_donnees_financiere_traite VARCHAR(255) 
 );
+
 
 CREATE TABLE section (
     id INT AUTO_INCREMENT PRIMARY KEY,
