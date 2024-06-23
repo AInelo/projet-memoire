@@ -1,6 +1,26 @@
 // Ligne.js
 import ElementLigne from './ElementLigne.js';
 
+// class Ligne {
+//     constructor() {
+//         this.elements = [];
+//     }
+
+//     ajouterElement(element) {
+//         const elementLigne = new ElementLigne(element);
+//         this.elements.push(elementLigne);
+//     }
+
+//     supprimerElement(index) {
+//         this.elements.splice(index, 1);
+//     }
+
+//     afficherElements() {
+//         return this.elements.map(element => element.afficherElement()).join(', ');
+//     }
+// }
+
+
 class Ligne {
     constructor() {
         this.elements = [];
@@ -11,13 +31,8 @@ class Ligne {
         this.elements.push(elementLigne);
     }
 
-    supprimerElement(index) {
-        this.elements.splice(index, 1);
-    }
-
     afficherElements() {
-        return this.elements.map(element => element.afficherElement()).join(', ');
+        return this.elements.map(element => element.element);
     }
 }
-
 export default Ligne;

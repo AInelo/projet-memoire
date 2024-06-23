@@ -26,6 +26,47 @@
 import Tableau from './Tableau.js';
 import SectionContenu from './SectionContenu.js';
 
+// class Section {
+//     constructor(titre) {
+//         this.titre = titre;
+//         this.tableaux = [];
+//         this.sectionContenus = [];
+//     }
+
+//     ajouterTableau(nomTableau) {
+//         const tableau = new Tableau(nomTableau);
+//         this.tableaux.push(tableau);
+//     }
+
+//     ajouterSectionContenu(titreSousSection, contenuSousSection) {
+//         const sectionContenu = new SectionContenu(titreSousSection, contenuSousSection);
+//         this.sectionContenus.push(sectionContenu);
+//     }
+
+//     supprimerTableau(index) {
+//         this.tableaux.splice(index, 1);
+//     }
+
+//     supprimerSectionContenu(index) {
+//         this.sectionContenus.splice(index, 1);
+//     }
+
+//     afficherTableaux() {
+//         return this.tableaux.map(tableau => ({
+//             nomTableau: tableau.nomTableau,
+//             lignes: tableau.afficherLignes()
+//         }));
+//     }
+
+//     afficherSectionContenus() {
+//         return this.sectionContenus.map(sectionContenu => ({
+//             titreSousSection: sectionContenu.titreSousSection,
+//             contenuSousSection: sectionContenu.contenuSousSection
+//         }));
+//     }
+// }
+
+
 class Section {
     constructor(titre) {
         this.titre = titre;
@@ -43,28 +84,19 @@ class Section {
         this.sectionContenus.push(sectionContenu);
     }
 
-    supprimerTableau(index) {
-        this.tableaux.splice(index, 1);
-    }
-
-    supprimerSectionContenu(index) {
-        this.sectionContenus.splice(index, 1);
-    }
-
-    afficherTableaux() {
-        return this.tableaux.map(tableau => ({
-            nomTableau: tableau.nomTableau,
-            lignes: tableau.afficherLignes()
-        }));
-    }
-
-    afficherSectionContenus() {
-        return this.sectionContenus.map(sectionContenu => ({
-            titreSousSection: sectionContenu.titreSousSection,
-            contenuSousSection: sectionContenu.contenuSousSection
-        }));
+    afficherContenus() {
+        return {
+            titre: this.titre,
+            tableaux: this.tableaux.map(tableau => tableau.afficherDetails()),
+            sectionContenus: this.sectionContenus.map(content => ({
+                titreSousSection: content.titreSousSection,
+                contenuSousSection: content.contenuSousSection
+            }))
+        };
     }
 }
+
+
 
 export default Section;
 
@@ -82,19 +114,51 @@ export default Section;
 
 import PlanAffaire from './PlanAffaire.js';
 
-const planAffaire = new PlanAffaire(1, 'Domaine');
+// const planAffaire = new PlanAffaire(1, 'Domaine');
 
-planAffaire.ajouterSection('Section 1');
-planAffaire.sections[0].ajouterTableau('Tableau 1');
-planAffaire.sections[0].tableaux[0].ajouterLigne();
-planAffaire.sections[0].tableaux[0].lignes[0].ajouterElement('Élément 1');
-planAffaire.sections[0].tableaux[0].lignes[0].ajouterElement('Élément 2');
+// planAffaire.ajouterSection('Section 1');
+// planAffaire.sections[0].ajouterTableau('Tableau 1');
+// planAffaire.sections[0].tableaux[0].ajouterLigne();
+// planAffaire.sections[0].tableaux[0].lignes[0].ajouterElement('Élément 1');
+// planAffaire.sections[0].tableaux[0].lignes[0].ajouterElement('Élément 2');
 
-planAffaire.ajouterSection('Section 2');
-planAffaire.sections[1].ajouterTableau('Tableau 2');
-planAffaire.sections[1].tableaux[0].ajouterLigne();
-planAffaire.sections[1].tableaux[0].lignes[0].ajouterElement('Élément A');
-planAffaire.sections[1].tableaux[0].lignes[0].ajouterElement('Élément B');
+// planAffaire.ajouterSection('Section 2');
+// planAffaire.sections[1].ajouterTableau('Tableau 2');
+// planAffaire.sections[1].tableaux[0].ajouterLigne();
+// planAffaire.sections[1].tableaux[0].lignes[0].ajouterElement('Élément A');
+// planAffaire.sections[1].tableaux[0].lignes[0].ajouterElement('Élément B');
 
-console.log(planAffaire.afficherSections());
-console.log(planAffaire)
+// console.log(planAffaire.afficherSections());
+// console.log(planAffaire)
+
+
+
+
+// const planAffaire = new PlanAffaire(1, 'Technologie');
+
+// // Ajouter une section
+// planAffaire.ajouterSection('Présentation du Projet');
+
+// // Ajouter un tableau à la première section
+// planAffaire.sections[0].ajouterTableau('Objectifs');
+// planAffaire.sections[0].tableaux[0].ajouterLigne();
+// planAffaire.sections[0].tableaux[0].lignes[0].ajouterElement('Objectif 1');
+// planAffaire.sections[0].tableaux[0].lignes[0].ajouterElement('Objectif 2');
+
+// // Ajouter une sous-section à la première section
+// planAffaire.sections[0].ajouterSectionContenu('Introduction', 'Description détaillée du projet');
+
+// // Ajouter une deuxième section
+// planAffaire.ajouterSection('Analyse de Marché');
+
+// // Ajouter un tableau à la deuxième section
+// planAffaire.sections[1].ajouterTableau('Études de marché');
+// planAffaire.sections[1].tableaux[0].ajouterLigne();
+// planAffaire.sections[1].tableaux[0].lignes[0].ajouterElement('Étude 1');
+// planAffaire.sections[1].tableaux[0].lignes[0].ajouterElement('Étude 2');
+
+// // Ajouter une sous-section à la deuxième section
+// planAffaire.sections[1].ajouterSectionContenu('Résumé', 'Résumé des études de marché');
+
+// // console.log(JSON.stringify(planAffaire.afficherSections(), null, 2));
+// console.log(JSON.stringify(planAffaire))

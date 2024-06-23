@@ -45,11 +45,105 @@ import Section from "./Section.js";
 // }
 
 
+// class PlanAffaire {
+//     constructor(id, domaine) {
+//         this.id = id;
+//         this.domaine = domaine;
+//         this.sections = [];
+//     }
+
+//     ajouterSection(titreSection) {
+//         const section = new Section(titreSection);
+//         this.sections.push(section);
+//     }
+
+//     afficherSections() {
+//         return this.sections.map(section => ({
+//             titre: section.titre,
+//             tableaux: section.afficherTableaux(),
+//             sectionContenus: section.afficherSectionContenus()
+//         }));
+//     }
+// }
+
+
+// export default PlanAffaire
+
+
+// class PlanAffaire {
+//     constructor(id, entrepreneurId, nom, domaine, cheminAccesPdf, cheminAccesWord, cheminAccesDonneesFinancieres, cheminAccesDonneesFinancieresTraite) {
+//         this.id = id;
+//         this.entrepreneurId = entrepreneurId;
+//         this.nom = nom;
+//         this.domaine = domaine;
+//         this.cheminAccesPdf = cheminAccesPdf;
+//         this.cheminAccesWord = cheminAccesWord;
+//         this.cheminAccesDonneesFinancieres = cheminAccesDonneesFinancieres;
+//         this.cheminAccesDonneesFinancieresTraite = cheminAccesDonneesFinancieresTraite;
+//         this.sections = [];
+//     }
+
+//     personnaliserSections(sections) {
+//         this.sections = sections;
+//     }
+
+//     ajouterSection(titreSection) {
+//         const section = new Section(titreSection);
+//         this.sections.push(section);
+//     }
+
+//     supprimerSection(titreSection) {
+//         this.sections = this.sections.filter(section => section.titre !== titreSection);
+//     }
+
+//     afficherSections() {
+//         return this.sections.map(section => section.titre).join(', ');
+//     }
+
+//     afficherPlan() {
+//         return {
+//             id: this.id,
+//             entrepreneurId: this.entrepreneurId,
+//             nom: this.nom,
+//             domaine: this.domaine,
+//             cheminAccesPdf: this.cheminAccesPdf,
+//             cheminAccesWord: this.cheminAccesWord,
+//             cheminAccesDonneesFinancieres: this.cheminAccesDonneesFinancieres,
+//             cheminAccesDonneesFinancieresTraite: this.cheminAccesDonneesFinancieresTraite,
+//             sections: this.sections.map(section => ({
+//                 titre: section.titre,
+//                 tableaux: section.tableaux.map(tableau => tableau.nomTableau),
+//                 sectionContenus: section.sectionContenus.map(content => ({
+//                     titreSousSection: content.titreSousSection,
+//                     contenuSousSection: content.contenuSousSection
+//                 }))
+//             }))
+//         };
+//     }
+
+//     afficherContenuSection(titreSection) {
+//         const section = this.sections.find(section => section.titre === titreSection);
+//         return section ? section.afficherContenus() : 'Section non trouvée';
+//     }
+// }
+
+
+
 class PlanAffaire {
-    constructor(id, domaine) {
+    constructor(id, entrepreneurId, nom, domaine, cheminAccesPdf, cheminAccesWord, cheminAccesDonneesFinancieres, cheminAccesDonneesFinancieresTraite) {
         this.id = id;
+        this.entrepreneurId = entrepreneurId;
+        this.nom = nom;
         this.domaine = domaine;
+        this.cheminAccesPdf = cheminAccesPdf;
+        this.cheminAccesWord = cheminAccesWord;
+        this.cheminAccesDonneesFinancieres = cheminAccesDonneesFinancieres;
+        this.cheminAccesDonneesFinancieresTraite = cheminAccesDonneesFinancieresTraite;
         this.sections = [];
+    }
+
+    personnaliserSections(sections) {
+        this.sections = sections;
     }
 
     ajouterSection(titreSection) {
@@ -57,20 +151,38 @@ class PlanAffaire {
         this.sections.push(section);
     }
 
+    supprimerSection(titreSection) {
+        this.sections = this.sections.filter(section => section.titre !== titreSection);
+    }
+
     afficherSections() {
-        return this.sections.map(section => ({
-            titre: section.titre,
-            tableaux: section.afficherTableaux(),
-            sectionContenus: section.afficherSectionContenus()
-        }));
+        return this.sections.map(section => section.titre).join(', ');
+    }
+
+    afficherPlan() {
+        return {
+            id: this.id,
+            entrepreneurId: this.entrepreneurId,
+            nom: this.nom,
+            domaine: this.domaine,
+            cheminAccesPdf: this.cheminAccesPdf,
+            cheminAccesWord: this.cheminAccesWord,
+            cheminAccesDonneesFinancieres: this.cheminAccesDonneesFinancieres,
+            cheminAccesDonneesFinancieresTraite: this.cheminAccesDonneesFinancieresTraite,
+            sections: this.sections.map(section => section.afficherContenus())
+        };
+    }
+
+    afficherContenuSection(titreSection) {
+        const section = this.sections.find(section => section.titre === titreSection);
+        return section ? section.afficherContenus() : 'Section non trouvée';
     }
 }
 
 
-export default PlanAffaire
 
 
-
+export default PlanAffaire;
 
 
 

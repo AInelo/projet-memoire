@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        #pdf-viewer {
+            width: 100%;
+            height: 100vh;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="pdf-viewer"></div>
+
+    <!-- Inclusion de PDF.js via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf.min.js"></script>
+    <script>
+        // URL du fichier PDF à afficher
+        const pdfUrl = '/pdf/test.pdf';
+
+        // Initialisation de PDF.js
+        const pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+        // Chargement du fichier PDF
+        pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc => {
+            const viewer = document.getElementById('pdf-viewer');
+            for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
+                // Création d'un conteneur pour chaque page
+                const pageContainer = document.createElement('div');
+                pageContainer.className = 'pdf-page';
+                viewer.appendChild(pageContainer);
+
+                // Rendu de chaque page
+                pdfDoc.getPage(pageNum).then(page => {
+                    const viewport = page.getViewport({ scale: 1.5 });
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    pageContainer.appendChild(canvas);
+
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    page.render(renderContext);
+                });
+            }
+        }).catch(err => {
+            console.error('Erreur lors du chargement du PDF : ' + err.message);
+        });
+    </script>
+</body>
+</html>

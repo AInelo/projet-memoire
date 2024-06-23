@@ -24,25 +24,50 @@ import Ligne from './Line.js';
 // }
 
 
+
+
+
+// class Tableau {
+//     constructor(nomTableau) {
+//         this.nomTableau = nomTableau;
+//         this.lignes = [];
+//     }
+
+//     ajouterLigne(ligneElement) {
+//         const ligne = new Ligne();
+//         ligne.ajouterElement(ligneElement);
+//         this.lignes.push(ligne);
+//     }
+
+//     supprimerLigne(index) {
+//         this.lignes.splice(index, 1);
+//     }
+
+//     afficherLignes() {
+//         return this.lignes.map(ligne => ligne.afficherElements()).join(', ');
+//     }
+// }
+
+
 class Tableau {
     constructor(nomTableau) {
         this.nomTableau = nomTableau;
         this.lignes = [];
     }
 
-    ajouterLigne(ligneElement) {
+    ajouterLigne() {
         const ligne = new Ligne();
-        ligne.ajouterElement(ligneElement);
         this.lignes.push(ligne);
     }
 
-    supprimerLigne(index) {
-        this.lignes.splice(index, 1);
-    }
-
-    afficherLignes() {
-        return this.lignes.map(ligne => ligne.afficherElements()).join(', ');
+    afficherDetails() {
+        return {
+            nomTableau: this.nomTableau,
+            lignes: this.lignes.map(ligne => ligne.afficherElements())
+        };
     }
 }
+
+
 
 export default Tableau;
