@@ -32,6 +32,7 @@
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">Labo Plan d'affaire</span>
             </li>
+
             <li class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
@@ -40,27 +41,29 @@
                 <span class="hide-menu">Nouveau Plan</span>
               </a>
             </li>
+
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">Les Sections</span>
             </li>
-            <li class="sidebar-item">
+
+            <li id="ficheSignalitique" class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
-                  <i class="ti ti-box-multiple-0"></i>
+                  <i class="ti ti-box-multiple-1"></i>
                 </span>
                 <span class="hide-menu">Fiche Signalitique</span>
               </a>
             </li>
-            <li class="sidebar-item">
+            <!-- <li class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
                   <i class="ti ti-box-multiple-1"></i>
                 </span>
                 <span class="hide-menu">Identification Promoteur</span>
               </a>
-            </li>
-            <li class="sidebar-item">
+            </li> -->
+            <li id="objectifsProjet" class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
                   <i class="ti ti-box-multiple-2"></i>
@@ -68,7 +71,8 @@
                 <span class="hide-menu">Objectifs Projet</span>
               </a>
             </li>
-            <li class="sidebar-item">
+
+            <li id="etudeDuMarche" class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
                   <i class="ti ti-box-multiple-3"></i>
@@ -76,7 +80,8 @@
                 <span class="hide-menu">Etude du marché</span>
               </a>
             </li>
-            <li class="sidebar-item">
+
+            <li id="strategieCommerciale" class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
                   <i class="ti ti-box-multiple-4"></i>
@@ -84,7 +89,8 @@
                 <span class="hide-menu">Strategie commerciale</span>
               </a>
             </li>
-            <li class="sidebar-item">
+
+            <li id="analyseTechnique" class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
                   <i class="ti ti-box-multiple-5"></i>
@@ -92,7 +98,8 @@
                 <span class="hide-menu">Analyse technique</span>
               </a>
             </li>
-            <li class="sidebar-item">
+
+            <li id="analyseFinanciere" class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
                   <i class="ti ti-box-multiple-6"></i>
@@ -100,7 +107,9 @@
                 <span class="hide-menu">Analyse financière</span>
               </a>
             </li>
-            <li class="sidebar-item">
+
+
+            <li id="socioEnvironnemental" class="sidebar-item">
               <a class="sidebar-link" href="#" aria-expanded="false">
                 <span>
                   <i class="ti ti-box-multiple-7"></i>
@@ -190,8 +199,7 @@
       
       <!--Start Content  -->
 
-
-      <div id="0-FicheSignalytique" class="container-fluid">
+      <div data-id="ficheSignalitique" class="container-fluid">
         <div class="container-fluid">
           <div class="card">
             <div class="card-body">
@@ -224,9 +232,6 @@
           </div>
         </div>
       </div>
-
-
-
 
 
       <div id="1-IdentificationDuPromoteur" class="container-fluid">
@@ -265,12 +270,6 @@
       </div>
 
 
-
-
-
-
-
-
       <div id="3-ObjectifsDuProjet" class="container-fluid">
         <div class="container-fluid">
           <div class="card">
@@ -305,11 +304,13 @@
           </div>
         </div>
       </div>
-
       <!-- End Content  -->
       
       
     </div>
+
+
+
   </div>
   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

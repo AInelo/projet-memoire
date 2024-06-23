@@ -1,0 +1,36 @@
+{
+    "plan_affaire_nom": "",
+    "domaine": "",
+    "sections": {
+            "tableaux" : [
+                {
+                    "nom_taleau": "",
+                    "lignes": [
+                        {
+
+                        }
+
+                    ]
+                },
+                {
+                    "nom_taleau": "",
+                    "lignes": [
+
+                    ]
+                },
+                {
+                    "nom_taleau": "",
+                    "lignes": [
+
+                    ]
+                }
+            ],
+            "section_contenus" : [
+                {
+                    "titre_sous_section" : "",
+                    "contenus_sous_section": ""
+                }
+            ]
+    }
+    
+}

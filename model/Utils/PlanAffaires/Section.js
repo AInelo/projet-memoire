@@ -1,5 +1,3 @@
-
-
 class Section {
     constructor(titre, contenus = []) {
         this.titre = titre;

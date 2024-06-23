@@ -1,7 +1,7 @@
 // models/PlanAffairesModel.js
 import DataBase from '../../db/ConnexionDb.js';
-import PlanAffaire from '../Utils/PlanAffaire.js';
-import Section from '../Utils/Section.js';
+import PlanAffaire from '../Utils/PlanAffaires/PlanAffaire.js';
+import Section from '../Utils/PlanAffaires/Section.js';
 const db = new DataBase();
 
 class PlanAffaireModel {
@@ -80,6 +80,11 @@ class PlanAffaireModel {
             throw new Error(`Error updating plan d'affaires: ${err.message}`);
         }
     }
+
+
+
+
+
 
     // Méthodes pour gérer les sections
 
