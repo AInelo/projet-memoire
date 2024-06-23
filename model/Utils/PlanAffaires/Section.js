@@ -1,7 +1,8 @@
 class Section {
     constructor(titre, contenus = []) {
         this.titre = titre;
-        this.contenus = contenus;
+        this.contenus = [];
+        this.tableau = [];
     }
 
     ajouterContenuSection(contenu) {

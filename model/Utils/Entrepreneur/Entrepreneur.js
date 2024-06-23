@@ -1,5 +1,5 @@
 // const worker = new Worker
-import PlanAffaire from "./PlanAffaires/PlanAffaire.js";
+import PlanAffaire from "../PlanAffaires/PlanAffaire.js";
 // class Entrepreneur {
 //     constructor(id, nom, email, motDePasse) {
 //         this.id = id;

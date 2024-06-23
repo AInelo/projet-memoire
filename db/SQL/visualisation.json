@@ -1,36 +1,117 @@
 {
-    "plan_affaire_nom": "",
-    "domaine": "",
-    "sections": {
-            "tableaux" : [
+  "id": "",
+  "entrepreneur_id": "",
+  "chemin_acces_pdf_file": "",
+  "chemin_acces_word_file": "",
+  "chemin_acces_donnees_financiere": "",
+  "chemin_acces_donnees_financiere_traite": "",
+  "plan_affaire_nom": "",
+  "domaine": "",
+  "sections": [
+    {
+      "tableaux": [
+        {
+          "nom_taleau": "",
+          "lignes": [
+            {
+            "ligne_element" : ""
+          },
+          {
+            "ligne_element" : ""
+          },
+          {
+            "ligne_element" : ""
+          },
+          {
+            "ligne_element" : ""
+          }
+        ]
+        },
+        {
+          "nom_taleau": "",
+          "lignes": []
+        },
+        {
+          "nom_taleau": "",
+          "lignes": []
+        }
+      ],
+      "section_contenus": [
+        {
+          "titre_sous_section": "",
+          "contenus_sous_section": ""
+        }
+      ]
+    },
+    {
+        "tableaux": [
+          {
+            "nom_taleau": "",
+            "lignes": [
                 {
-                    "nom_taleau": "",
-                    "lignes": [
-                        {
-
-                        }
-
-                    ]
-                },
-                {
-                    "nom_taleau": "",
-                    "lignes": [
-
-                    ]
-                },
-                {
-                    "nom_taleau": "",
-                    "lignes": [
-
-                    ]
-                }
-            ],
-            "section_contenus" : [
-                {
-                    "titre_sous_section" : "",
-                    "contenus_sous_section": ""
-                }
+                "ligne_element" : ""
+              },
+              {
+                "ligne_element" : ""
+              },
+              {
+                "ligne_element" : ""
+              },
+              {
+                "ligne_element" : ""
+              }
             ]
-    }
-    
+          },
+          {
+            "nom_taleau": "",
+            "lignes": []
+          },
+          {
+            "nom_taleau": "",
+            "lignes": []
+          }
+        ],
+        "section_contenus": [
+          {
+            "titre_sous_section": "",
+            "contenus_sous_section": ""
+          }
+        ]
+      },
+      {
+        "tableaux": [
+          {
+            "nom_taleau": "",
+            "lignes": [
+                {
+                    "ligne_element" : ""
+                  },
+                  {
+                    "ligne_element" : ""
+                  },
+                  {
+                    "ligne_element" : ""
+                  },
+                  {
+                    "ligne_element" : ""
+                  }
+            ]
+          },
+          {
+            "nom_taleau": "",
+            "lignes": []
+          },
+          {
+            "nom_taleau": "",
+            "lignes": []
+          }
+        ],
+        "section_contenus": [
+          {
+            "titre_sous_section": "",
+            "contenus_sous_section": ""
+          }
+        ]
+      }
+  ]
 }
