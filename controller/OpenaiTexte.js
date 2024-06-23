@@ -34,8 +34,7 @@ async function generateText(prompt) {
     }
 }
 
-const prompt = `quel autre modèle nous permet vraiment de mettre en place la séparation des responsbilités correctement, entity, modelBase de donnée, DTO, View, Controller, routes et autres ?
-ChatGPT
-Pour une séparation claire des responsabilités au sein d'une application, plusieurs modèles architecturaux peuvent être utilisés, en fonction des besoins spécifiques de l'applicat`
+const prompt = `Fourni moi une légère définition du Quadrant magique de Gartner
+`
 
 generateText(prompt);

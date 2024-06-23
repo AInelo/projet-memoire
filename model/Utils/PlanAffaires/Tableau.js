@@ -1,6 +1,7 @@
 // Tableau.js
 // import Lignes from "./Lignes";
 // import ElementLigne from './ElementLigne.js';
+
 import Ligne from './Line.js';
 
 // class Ligne {
