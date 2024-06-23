@@ -17,7 +17,7 @@ async function generateText(prompt) {
             {
                 model: 'gpt-3.5-turbo',
                 messages: [{ role: 'user', content: prompt }],
-                max_tokens: 150
+                max_tokens: 2000
             },
             {
                 headers: {
@@ -34,6 +34,8 @@ async function generateText(prompt) {
     }
 }
 
-const prompt = "Je suis un comptable et je veux ajouter un comptes comptable pour classer les tables acheté dans le Bilan, quels sont les comptes que tu me suggère ?"
+const prompt = `quel autre modèle nous permet vraiment de mettre en place la séparation des responsbilités correctement, entity, modelBase de donnée, DTO, View, Controller, routes et autres ?
+ChatGPT
+Pour une séparation claire des responsabilités au sein d'une application, plusieurs modèles architecturaux peuvent être utilisés, en fonction des besoins spécifiques de l'applicat`
 
 generateText(prompt);

@@ -1,48 +1,71 @@
 import Section from "./Section.js";
 
+// class PlanAffaire {
+//     constructor(id, titreSection, domaine, donneesFinancieres) {
+//         this.id = id;
+//         this.domaine = domaine;
+//         this.donneesFinancieres = donneesFinancieres;
+//         this.sections = [];
+//         this.ajouterSection(titreSection); // Créer une section initiale
+//     }
+
+//     personnaliserSections(sections) {
+//         this.sections = sections;
+//     }
+
+//     ajouterSection(titreSection, contenus = []) {
+//         const section = new Section(titreSection, contenus);
+//         this.sections.push(section);
+//     }
+
+//     supprimerSection(titreSection) {
+//         this.sections = this.sections.filter(section => section.titre !== titreSection);
+//     }
+
+//     afficherSections() {
+//         return this.sections.map(section => section.titre).join(', ');
+//     }
+
+//     afficherPlan() {
+//         return {
+//             id: this.id,
+//             domaine: this.domaine,
+//             donneesFinancieres: this.donneesFinancieres,
+//             sections: this.sections.map(section => ({
+//                 titre: section.titre,
+//                 contenus: section.afficherContenus()
+//             }))
+//         };
+//     }
+
+//     afficherContenuSection(titreSection) {
+//         const section = this.sections.find(section => section.titre === titreSection);
+//         return section ? section.afficherContenus() : 'Section non trouvée';
+//     }
+// }
+
+
 class PlanAffaire {
-    constructor(id, titreSection, domaine, donneesFinancieres) {
+    constructor(id, domaine) {
         this.id = id;
         this.domaine = domaine;
-        this.donneesFinancieres = donneesFinancieres;
         this.sections = [];
-        this.ajouterSection(titreSection); // Créer une section initiale
     }
 
-    personnaliserSections(sections) {
-        this.sections = sections;
-    }
-
-    ajouterSection(titreSection, contenus = []) {
-        const section = new Section(titreSection, contenus);
+    ajouterSection(titreSection) {
+        const section = new Section(titreSection);
         this.sections.push(section);
     }
 
-    supprimerSection(titreSection) {
-        this.sections = this.sections.filter(section => section.titre !== titreSection);
-    }
-
     afficherSections() {
-        return this.sections.map(section => section.titre).join(', ');
-    }
-
-    afficherPlan() {
-        return {
-            id: this.id,
-            domaine: this.domaine,
-            donneesFinancieres: this.donneesFinancieres,
-            sections: this.sections.map(section => ({
-                titre: section.titre,
-                contenus: section.afficherContenus()
-            }))
-        };
-    }
-
-    afficherContenuSection(titreSection) {
-        const section = this.sections.find(section => section.titre === titreSection);
-        return section ? section.afficherContenus() : 'Section non trouvée';
+        return this.sections.map(section => ({
+            titre: section.titre,
+            tableaux: section.afficherTableaux(),
+            sectionContenus: section.afficherSectionContenus()
+        }));
     }
 }
+
 
 export default PlanAffaire
 
