@@ -83,6 +83,7 @@ class Section {
     ajouterSectionContenu(titreSousSection, contenuSousSection) {
         const sectionContenu = new SectionContenu(titreSousSection, contenuSousSection);
         this.sectionContenus.push(sectionContenu);
+        return sectionContenu
     }
 
     afficherContenus() {

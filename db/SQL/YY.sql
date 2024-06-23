@@ -1,3 +1,9 @@
+DROP DATABASE business;
+
+CREATE DATABASE business;
+
+USE business;
+
 CREATE TABLE plan_affaire (
     id INT AUTO_INCREMENT PRIMARY KEY,
     entrepreneur_id INT,

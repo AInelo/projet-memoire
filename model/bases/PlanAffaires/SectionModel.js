@@ -87,7 +87,65 @@ class SectionModel {
     }
 
 
+    // static async createSectionContenu(sectionId, contenu) {
+    //     const { titreSousSection, contenuSousSection } = contenu;
+    //     try {
+    //         const sql = `
+    //             INSERT INTO contenus_sous_section (section_id, titre_partie, contenus)
+    //             VALUES (?, ?, ?)
+    //         `;
+    //         const params = [sectionId, titreSousSection, contenuSousSection];
+    //         const result = await this.db.execute(sql, params);
+    //         return result.insertId;
+    //     } catch (error) {
+    //         console.error('Erreur lors de la création du contenu de sous-section', error);
+    //         throw error;
+    //     }
+    // }
+
+
+    static async createSectionContenuee(sectionId, contenu) {
+        const { titreSousSection, contenuSousSection } = contenu;
+        // Vérifiez les valeurs avant de créer la requête
+        console.log(`sectionId: ${sectionId}, titreSousSection: ${titreSousSection}, contenuSousSection: ${contenuSousSection}`);
+
+        try {
+            const sql = `
+                INSERT INTO contenus_sous_section (section_id, titre_partie, contenus)
+                VALUES (?, ?, ?)
+            `;
+
+            // Assurez-vous que contenuSousSection n'est pas NULL
+            const params = [sectionId, titreSousSection, contenuSousSection || '']; // Utilisation de '' pour éviter NULL indésirables
+
+            const result = await this.db.execute(sql, params);
+            return result.insertId;
+        } catch (error) {
+            console.error('Erreur lors de la création du contenu de sous-section', error);
+            throw error;
+        }
+    }
+
     static async createSectionContenu(sectionId, contenu) {
+        try {
+            const { titreSousSection, contenuSousSection } = contenu;
+            console.log(contenu)
+
+            const sql = `
+                INSERT INTO contenus_sous_section (section_id, titre_partie, contenus)
+                VALUES (?, ?, ?)
+            `;
+            const params = [sectionId, titreSousSection, contenuSousSection];
+            const result = await this.db.execute(sql, params);
+            return result.insertId;
+        } catch (error) {
+            console.error('Erreur lors de la création du contenu de sous-section', error);
+            throw error;
+        }
+    }
+
+
+    static async createSectionContenue(sectionId, contenu) {
         const { titreSousSection, contenuSousSection } = contenu;
         try {
             const sql = `
@@ -106,6 +164,8 @@ class SectionModel {
 
 
 export default SectionModel;
+
+
     // static async createSectionContenu(sectionId, contenu) {
     //     const { titreSousSection, contenuSousSection } = contenu;
     //     try {

@@ -1,0 +1,107 @@
+{
+    "id": 1,
+    "entrepreneurId": 123,
+    "nom": "Plan Affaire Technologie",
+    "domaine": "Technologie",
+    "cheminAccesPdf": "chemin/vers/le/fichier.pdf",
+    "cheminAccesWord": "chemin/vers/le/fichier.docx",
+    "cheminAccesDonneesFinancieres": "chemin/vers/les/donnees_financieres.csv",
+    "cheminAccesDonneesFinancieresTraite": "chemin/vers/les/donnees_financieres_traite.csv",
+    "sections": [
+      {
+        "titre": "Présentation du Projet",
+        "tableaux": [
+          {
+            "nomTableau": "Objectifs",
+            "lignes": [
+              {
+                "elements": [
+                  { "element": "Objectif 1" },
+                  { "element": "Objectif 2" },
+                  { "element": "Objectif 3" }
+                ]
+              },
+              {
+                "elements": [
+                  { "element": "Objectif 4" },
+                  { "element": "Objectif 5" }
+                ]
+              }
+            ]
+          }
+        ],
+        "sectionContenus": [
+          {
+            "titreSousSection": {
+              "titreSousSection": "Introduction",
+              "contenuSousSection": "Description détaillée du projet"
+            }
+          }
+        ]
+      },
+
+
+      {
+        "titre": "Analyse de Marché",
+        "tableaux": [
+          {
+            "nomTableau": "Études de marché",
+            "lignes": [
+              {
+                "elements": [
+                  { "element": "Analyse 1" },
+                  { "element": "Analyse 2" },
+                  { "element": "Analyse 3" }
+                ]
+              },
+              {
+                "elements": [
+                  { "element": "Analyse 4" },
+                  { "element": "Analyse 5" }
+                ]
+              }
+            ]
+          }
+        ],
+        "sectionContenus": [
+          {
+            "titreSousSection": {
+              "titreSousSection": "Résumé",
+              "contenuSousSection": "Résumé des études de marché"
+            }
+          }
+        ]
+      },
+
+
+
+      {
+        "titre": "Plan Financier",
+        "tableaux": [
+          {
+            "nomTableau": "Prévisions financières",
+            "lignes": [
+              {
+                "elements": [
+                  { "element": "Prévision 1" },
+                  { "element": "Prévision 2" }
+                ]
+              }
+            ]
+          }
+        ],
+        "sectionContenus": [
+          {
+            "titreSousSection": {
+              "titreSousSection": "Détails Financiers",
+              "contenuSousSection": "Description des prévisions financières"
+            }
+          }
+        ]
+      }
+
+
+      
+    ]
+  }
+  
