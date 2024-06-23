@@ -1,11 +1,10 @@
 import DataBase from '../../../db/ConnexionDb.js';
 import ElementLigneModel from './ElementLigneModel.js';
 
-class LigneModel {
-    // constructor() {
-    //     this.db = new DataBase();
-    // }
+const db = new DataBase
 
+class LigneModel {
+   
     static async createLigne(tableauId, ligne) {
         try {
             const sql = `
@@ -13,11 +12,12 @@ class LigneModel {
                 VALUES (?)
             `;
             const params = [tableauId];
-            const result = await this.db.execute(sql, params);
+            const result = await db.execute(sql, params);
             const ligneId = result.insertId;
             
             // Enregistrer les éléments de ligne
             for (const element of ligne) {
+                
                 await ElementLigneModel.createElementLigne(ligneId, element);
             }
 

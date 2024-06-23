@@ -122,11 +122,14 @@ const ligne1_2 = tableau1.ajouterLigne();
 ligne1_2.ajouterElementLigne('Objectif 4');
 ligne1_2.ajouterElementLigne('Objectif 5');
 
-section1.ajouterSectionContenu({
-    titreSousSection: 'Introduction',
-    contenuSousSection: 'Description détaillée du projet'
-});
-
+// section1.ajouterSectionContenu({
+//     titreSousSection: 'Introduction',
+//     contenuSousSection: 'Description détaillée du projet'
+// });
+section1.ajouterSectionContenu(
+    'Introduction',
+     'Description détaillée du projet'
+);
 const section2 = planAffaire.ajouterSection('Analyse de Marché');
 const tableau2 = section2.ajouterTableau('Études de marché');
 
@@ -139,10 +142,15 @@ const ligne2_2 = tableau2.ajouterLigne();
 ligne2_2.ajouterElementLigne('Analyse 4');
 ligne2_2.ajouterElementLigne('Analyse 5');
 
-section2.ajouterSectionContenu({
-    titreSousSection: 'Résumé',
-    contenuSousSection: 'Résumé des études de marché'
-});
+// section2.ajouterSectionContenu({
+//     titreSousSection: 'Résumé',
+//     contenuSousSection: 'Résumé des études de marché'
+// });
+
+section2.ajouterSectionContenu(
+    'Résumé',
+   'Résumé des études de marché'
+);
 
 const section3 = planAffaire.ajouterSection('Plan Financier');
 const tableau3 = section3.ajouterTableau('Prévisions financières');
@@ -151,10 +159,19 @@ const ligne3_1 = tableau3.ajouterLigne();
 ligne3_1.ajouterElementLigne('Prévision 1');
 ligne3_1.ajouterElementLigne('Prévision 2');
 
-section3.ajouterSectionContenu({
-    titreSousSection: 'Détails Financiers',
-    contenuSousSection: 'Description des prévisions financières'
-});
+// section3.ajouterSectionContenu({
+//     titreSousSection: 'Détails Financiers',
+//     contenuSousSection: 'Description des prévisions financières'
+// });
+
+
+
+section3.ajouterSectionContenu(
+    'Détails Financiers',
+    'Description des prévisions financières'
+);
+
+
 console.log(JSON.stringify(planAffaire))
 console.log("----------------------------------------------------------")
 console.log('Plan d\'affaire en cours de création :', planAffaire);

@@ -49,16 +49,38 @@ import Ligne from './Line.js';
 // }
 
 
+// class Tableau {
+//     constructor(nomTableau) {
+//         this.nomTableau = nomTableau;
+//         this.lignes = [];
+//     }
+
+//     ajouterLigne() {
+//         const ligne = new Ligne();
+//         this.lignes.push(ligne);
+//         return ligne
+//     }
+
+//     afficherDetails() {
+//         return {
+//             nomTableau: this.nomTableau,
+//             lignes: this.lignes.map(ligne => ligne.afficherElements())
+//         };
+//     }
+// }
+
+
+
 class Tableau {
     constructor(nomTableau) {
         this.nomTableau = nomTableau;
         this.lignes = [];
     }
 
-    ajouterLigne() {
-        const ligne = new Ligne();
+    ajouterLigne(elements) {
+        const ligne = new Ligne(elements); // Assurez-vous que Ligne reçoit des éléments
         this.lignes.push(ligne);
-        return ligne
+        return ligne;
     }
 
     afficherDetails() {
@@ -68,7 +90,6 @@ class Tableau {
         };
     }
 }
-
 
 
 export default Tableau;

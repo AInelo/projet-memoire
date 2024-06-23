@@ -20,7 +20,6 @@ CREATE TABLE section (
     id INT AUTO_INCREMENT PRIMARY KEY,
     planAffaire_id INT,
     titre VARCHAR(255),
-    contenus TEXT,
     FOREIGN KEY (planAffaire_id) REFERENCES plan_affaire(id)
 );
 

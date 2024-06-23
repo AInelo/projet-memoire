@@ -29,6 +29,55 @@ class PlanAffaireModel {
             throw error;
         }
     }
+
+    static async getPlanAffaireDetails(planAffaireId) {
+        const sql = `
+            SELECT
+                pa.id AS plan_affaire_id,
+                pa.entrepreneur_id,
+                pa.plan_affaire_nom,
+                pa.domaine,
+                pa.chemin_acces_pdf_file,
+                pa.chemin_acces_word_file,
+                pa.chemin_acces_donnees_financiere,
+                pa.chemin_acces_donnees_financiere_traite,
+                s.id AS section_id,
+                s.titre AS section_titre,
+
+                css.id AS contenus_sous_section_id,
+                css.titre_partie,
+                css.contenus AS contenus_sous_section,
+                t.id AS tableau_id,
+                t.nom_tableau,
+                l.id AS ligne_id,
+                el.id AS element_ligne_id,
+                el.element
+            FROM
+                plan_affaire pa
+            LEFT JOIN
+                section s ON pa.id = s.planAffaire_id
+            LEFT JOIN
+                contenus_sous_section css ON s.id = css.section_id
+            LEFT JOIN
+                tableau t ON s.id = t.section_id
+            LEFT JOIN
+                ligne l ON t.id = l.tableau_id
+            LEFT JOIN
+                element_ligne el ON l.id = el.ligne_id
+            WHERE
+                pa.id = ?;
+        `;
+    
+        try {
+            const [rows] = await db.execute(sql, [planAffaireId]);
+            return rows;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des détails du plan d\'affaire', error);
+            throw error;
+        }
+    }
+
+
 }
 
 export default PlanAffaireModel;

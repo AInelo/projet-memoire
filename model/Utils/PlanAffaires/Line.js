@@ -21,6 +21,23 @@ import ElementLigne from './ElementLigne.js';
 // }
 
 
+// class Ligne {
+//     constructor() {
+//         this.elements = [];
+//     }
+
+//     ajouterElementLigne(element) {
+//         const elementLigne = new ElementLigne(element);
+//         this.elements.push(elementLigne);
+//         return elementLigne
+//     }
+
+//     afficherElements() {
+//         return this.elements.map(element => element.element);
+//     }
+// }
+
+
 class Ligne {
     constructor() {
         this.elements = [];
@@ -29,11 +46,12 @@ class Ligne {
     ajouterElementLigne(element) {
         const elementLigne = new ElementLigne(element);
         this.elements.push(elementLigne);
-        return elementLigne
+        return elementLigne;
     }
 
     afficherElements() {
-        return this.elements.map(element => element.element);
+        return this.elements.map(elementLigne => elementLigne.element);
     }
 }
+
 export default Ligne;

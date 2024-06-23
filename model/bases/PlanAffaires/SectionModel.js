@@ -53,20 +53,21 @@ import TableauModel from './TableauModel.js';
 //         }
 //     }
 // }
-
+const db = new DataBase
 
 class SectionModel {
-    static db = new DataBase();
+    // static db = new DataBase();
 
     static async createSection(planAffaireId, section) {
         const { titre, sectionContenus, tableaux } = section;
+        console.log('Voici la section : ' + section)
         try {
             const sql = `
                 INSERT INTO section (planAffaire_id, titre)
                 VALUES (?, ?)
             `;
             const params = [planAffaireId, titre];
-            const result = await this.db.execute(sql, params);
+            const result = await db.execute(sql, params);
             const sectionId = result.insertId;
 
             // Enregistrer les contenus de sous-section
@@ -104,27 +105,27 @@ class SectionModel {
     // }
 
 
-    static async createSectionContenuee(sectionId, contenu) {
-        const { titreSousSection, contenuSousSection } = contenu;
-        // Vérifiez les valeurs avant de créer la requête
-        console.log(`sectionId: ${sectionId}, titreSousSection: ${titreSousSection}, contenuSousSection: ${contenuSousSection}`);
+    // static async createSectionContenuee(sectionId, contenu) {
+    //     const { titreSousSection, contenuSousSection } = contenu;
+    //     // Vérifiez les valeurs avant de créer la requête
+    //     console.log(`sectionId: ${sectionId}, titreSousSection: ${titreSousSection}, contenuSousSection: ${contenuSousSection}`);
 
-        try {
-            const sql = `
-                INSERT INTO contenus_sous_section (section_id, titre_partie, contenus)
-                VALUES (?, ?, ?)
-            `;
+    //     try {
+    //         const sql = `
+    //             INSERT INTO contenus_sous_section (section_id, titre_partie, contenus)
+    //             VALUES (?, ?, ?)
+    //         `;
 
-            // Assurez-vous que contenuSousSection n'est pas NULL
-            const params = [sectionId, titreSousSection, contenuSousSection || '']; // Utilisation de '' pour éviter NULL indésirables
+    //         // Assurez-vous que contenuSousSection n'est pas NULL
+    //         const params = [sectionId, titreSousSection, contenuSousSection || '']; // Utilisation de '' pour éviter NULL indésirables
 
-            const result = await this.db.execute(sql, params);
-            return result.insertId;
-        } catch (error) {
-            console.error('Erreur lors de la création du contenu de sous-section', error);
-            throw error;
-        }
-    }
+    //         const result = await this.db.execute(sql, params);
+    //         return result.insertId;
+    //     } catch (error) {
+    //         console.error('Erreur lors de la création du contenu de sous-section', error);
+    //         throw error;
+    //     }
+    // }
 
     static async createSectionContenu(sectionId, contenu) {
         try {
@@ -136,7 +137,7 @@ class SectionModel {
                 VALUES (?, ?, ?)
             `;
             const params = [sectionId, titreSousSection, contenuSousSection];
-            const result = await this.db.execute(sql, params);
+            const result = await db.execute(sql, params);
             return result.insertId;
         } catch (error) {
             console.error('Erreur lors de la création du contenu de sous-section', error);
@@ -145,21 +146,21 @@ class SectionModel {
     }
 
 
-    static async createSectionContenue(sectionId, contenu) {
-        const { titreSousSection, contenuSousSection } = contenu;
-        try {
-            const sql = `
-                INSERT INTO contenus_sous_section (section_id, titre_partie, contenus)
-                VALUES (?, ?, ?)
-            `;
-            const params = [sectionId, titreSousSection, contenuSousSection];
-            const result = await this.db.execute(sql, params);
-            return result.insertId;
-        } catch (error) {
-            console.error('Erreur lors de la création du contenu de sous-section', error);
-            throw error;
-        }
-    }
+    // static async createSectionContenue(sectionId, contenu) {
+    //     const { titreSousSection, contenuSousSection } = contenu;
+    //     try {
+    //         const sql = `
+    //             INSERT INTO contenus_sous_section (section_id, titre_partie, contenus)
+    //             VALUES (?, ?, ?)
+    //         `;
+    //         const params = [sectionId, titreSousSection, contenuSousSection];
+    //         const result = await this.db.execute(sql, params);
+    //         return result.insertId;
+    //     } catch (error) {
+    //         console.error('Erreur lors de la création du contenu de sous-section', error);
+    //         throw error;
+    //     }
+    // }
 }
 
 
