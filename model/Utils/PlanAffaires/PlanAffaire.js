@@ -152,10 +152,7 @@ class PlanAffaire {
         return section; // Retourner la nouvelle section
     }
 
-    // ajouterSection(titreSection) {
-    //     const section = new Section(titreSection);
-    //     this.sections.push(section);
-    // }
+   
 
     supprimerSection(titreSection) {
         this.sections = this.sections.filter(section => section.titre !== titreSection);

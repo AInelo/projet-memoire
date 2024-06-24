@@ -5,6 +5,9 @@ import fileupload from "express-fileupload";
 import browserSync from "browser-sync";
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // // Charger les variables d'environnement
 // dotenv.config();
@@ -19,6 +22,12 @@ let initial_path = join(__dirname, "public");
 const app = express();
 
 app.use(express.static(initial_path));app.use(fileupload());
+
+
+import plan_affaire from './routes/PlanAffaireRoutes.js';
+
+
+app.use('/plan', plan_affaire)
 
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(initial_path, "index.html"));
@@ -46,6 +55,8 @@ app.use(express.static(initial_path));app.use(fileupload());
 // app.get("/simulateur_is", (req, res) => {
 //   res.sendFile(join(initial_path, "simulateur_is.html"));
 // });
+
+
 
 app.use((req, res) => {
   res.status(404).json("Not Found.");

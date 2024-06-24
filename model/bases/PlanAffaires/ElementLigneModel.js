@@ -5,9 +5,6 @@ const db = new DataBase
 
 
 class ElementLigneModel {
-    // constructor() {
-    //     this.db = new DataBase();
-    // }
 
     static async createElementLigne(ligneId, element) {
         try {
@@ -20,6 +17,32 @@ class ElementLigneModel {
             return result.insertId;
         } catch (error) {
             console.error('Erreur lors de la création de l\'élément de ligne', error);
+            throw error;
+        }
+    }
+
+
+    static async getElementsByLigneId(ligneId) {
+        const sql = `
+            SELECT
+                el.id AS element_ligne_id,
+                el.element AS element_ligne_element
+            FROM
+                element_ligne el
+            WHERE
+                el.ligne_id = ?;
+        `;
+
+        try {
+            const [rows] = await db.execute(sql, [ligneId]);
+            const elements = rows.map(row => ({
+                id: row.element_ligne_id,
+                element: row.element_ligne_element
+            }));
+
+            return elements;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des éléments de ligne', error);
             throw error;
         }
     }

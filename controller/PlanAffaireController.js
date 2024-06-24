@@ -1,4 +1,4 @@
-import PlanAffaireModel from "../model/bases/PlanAffaires/PlanAffaireModel";
+import PlanAffaireModel from "../model/bases/PlanAffaires/PlanAffaireModel.js";
 
 class PlanAffaireController {
     static async createPlanAffaire(req, res) {
@@ -17,9 +17,20 @@ class PlanAffaireController {
 
     static async getOnePlanAffaire(req, res) {
         const { id } = req.params;
+        // try {
+        //     const details = await PlanAffaireModel.getPlanAffaireDetails(id);
+        //     res.status(200).json(details);
+        // } catch (error) {
+        //     res.status(500).json({ message: 'Erreur lors de la récupération des détails du plan d\'affaire', error: error.message });
+        // }
+
         try {
-            const details = await getPlanAffaireDetails(id);
-            res.status(200).json(details);
+            const details = await PlanAffaireModel.getPlanAffaireDetails(id);
+            if (details) {
+                res.status(200).json(details);
+            } else {
+                res.status(404).json({ message: 'Plan d\'affaire non trouvé' });
+            }
         } catch (error) {
             res.status(500).json({ message: 'Erreur lors de la récupération des détails du plan d\'affaire', error: error.message });
         }

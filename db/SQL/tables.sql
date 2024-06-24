@@ -131,3 +131,42 @@ CREATE TABLE UtilisateurModel (
     FOREIGN KEY (entrepreneurId) REFERENCES Entrepreneur(id),
     FOREIGN KEY (modelId) REFERENCES ModelePlanAffaires(id)
 );
+
+
+
+
+
+
+SELECT
+                pa.id AS plan_affaire_id,
+                pa.entrepreneur_id,
+                pa.plan_affaire_nom,
+                pa.domaine,
+                pa.chemin_acces_pdf_file,
+                pa.chemin_acces_word_file,
+                pa.chemin_acces_donnees_financiere,
+                pa.chemin_acces_donnees_financiere_traite,
+                s.id AS section_id,
+                s.titre AS section_titre,
+                css.id AS contenus_sous_section_id,
+                css.titre_partie,
+                css.contenus AS contenus_sous_section,
+                t.id AS tableau_id,
+                t.nom_tableau,
+                l.id AS ligne_id,
+                el.id AS element_ligne_id,
+                el.element
+            FROM
+                plan_affaire pa
+             JOIN
+                section s ON pa.id = s.planAffaire_id
+             JOIN
+               contenus_sous_section css ON s.id = css.section_id
+             JOIN
+                tableau t ON s.id = t.section_id
+             JOIN
+                ligne l ON t.id = l.tableau_id
+             JOIN
+                element_ligne el ON l.id = el.ligne_id
+            WHERE
+                pa.id = 1;

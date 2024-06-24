@@ -102,7 +102,7 @@ import PlanAffaireModel from '../../bases/PlanAffaires/PlanAffaireModel.js';
 
 async function createAndSavePlanAffaire() {
     const planAffaire = new PlanAffaire(
-        2,
+        3,
         123,
         'Plan Affaire Technologie',
         'Technologie',

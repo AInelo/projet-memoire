@@ -34,6 +34,38 @@ class TableauModel {
             throw error;
         }
     }
+
+
+    static async getTableauxBySectionId(sectionId) {
+        const sql = `
+            SELECT
+                t.id AS tableau_id,
+                t.nom_tableau AS tableau_nom
+            FROM
+                tableau t
+            WHERE
+                t.section_id = ?;
+        `;
+
+        try {
+            const [rows] = await db.execute(sql, [sectionId]);
+            const tableaux = [];
+
+            for (const row of rows) {
+                const tableau = {
+                    id: row.tableau_id,
+                    nom_tableau: row.tableau_nom,
+                    lignes: await LigneModel.getLignesByTableauId(row.tableau_id)
+                };
+                tableaux.push(tableau);
+            }
+
+            return tableaux;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des tableaux', error);
+            throw error;
+        }
+    }
 }
 
 export default TableauModel;

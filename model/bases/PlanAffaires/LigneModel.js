@@ -27,6 +27,36 @@ class LigneModel {
             throw error;
         }
     }
+
+
+    static async getLignesByTableauId(tableauId) {
+        const sql = `
+            SELECT
+                l.id AS ligne_id
+            FROM
+                ligne l
+            WHERE
+                l.tableau_id = ?;
+        `;
+
+        try {
+            const [rows] = await db.execute(sql, [tableauId]);
+            const lignes = [];
+
+            for (const row of rows) {
+                const ligne = {
+                    id: row.ligne_id,
+                    elements: await ElementLigneModel.getElementsByLigneId(row.ligne_id)
+                };
+                lignes.push(ligne);
+            }
+
+            return lignes;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des lignes', error);
+            throw error;
+        }
+    }
 }
 
 export default LigneModel;
