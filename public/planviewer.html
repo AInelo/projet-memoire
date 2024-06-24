@@ -326,7 +326,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf.min.js"></script>
     <script>
         // URL du fichier PDF à afficher
-        const pdfUrl = '/pdf/test.pdf';
+        const pdfUrl = '/pdf/plan_affaire_1.pdf';
 
         // Initialisation de PDF.js
         const pdfjsLib = window['pdfjs-dist/build/pdf'];
@@ -342,7 +342,7 @@
 
                 // Rendu de chaque page
                 pdfDoc.getPage(pageNum).then(page => {
-                    const viewport = page.getViewport({ scale: 1.5 });
+                    const viewport = page.getViewport({ scale: 2 });
                     const canvas = document.createElement('canvas');
                     const context = canvas.getContext('2d');
                     canvas.height = viewport.height;

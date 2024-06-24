@@ -34,6 +34,52 @@ class PlanAffaireModel {
 
 
     static async getPlanAffaireDetails(planAffaireId) {
+        const sql = `
+            SELECT
+                pa.id AS plan_affaire_id,
+                pa.entrepreneur_id,
+                pa.plan_affaire_nom,
+                pa.domaine,
+                pa.chemin_acces_pdf_file,
+                pa.chemin_acces_word_file,
+                pa.chemin_acces_donnees_financiere,
+                pa.chemin_acces_donnees_financiere_traite
+            FROM
+                plan_affaire pa
+            WHERE
+                pa.id = ?;
+        `;
+
+        try {
+            const [rows] = await db.execute(sql, [planAffaireId]);
+            console.log('SQL rows:', rows);
+
+            if (!rows.length) {
+                return null;
+            }
+
+            const planAffaire = {
+                id: rows[0].plan_affaire_id,
+                entrepreneur_id: rows[0].entrepreneur_id,
+                plan_affaire_nom: rows[0].plan_affaire_nom,
+                domaine: rows[0].domaine,
+                chemin_acces_pdf_file: rows[0].chemin_acces_pdf_file,
+                chemin_acces_word_file: rows[0].chemin_acces_word_file,
+                chemin_acces_donnees_financiere: rows[0].chemin_acces_donnees_financiere,
+                chemin_acces_donnees_financiere_traite: rows[0].chemin_acces_donnees_financiere_traite,
+                sections: await SectionModel.getSectionsByPlanAffaireId(planAffaireId)
+            };
+
+            return planAffaire;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des détails du plan d\'affaire', error);
+            throw error;
+        }
+    }
+
+
+
+    static async getPlanAffaireDetails_Recent(planAffaireId) {
         console.log('id is : ' + planAffaireId)
         const sql = `
             SELECT

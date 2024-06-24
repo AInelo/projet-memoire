@@ -180,6 +180,26 @@ class PlanAffaire {
         const section = this.sections.find(section => section.titre === titreSection);
         return section ? section.afficherContenus() : 'Section non trouvée';
     }
+
+
+    // imprimer(doc) {
+    //     doc.fontSize(20).text(`Plan d'affaire ${this.id}`, { align: 'center' });
+    //     doc.moveDown();
+        
+    //     this.sections.forEach(section => {
+    //         section.imprimer(doc);
+    //     });
+    // }
+
+    imprimer(doc) {
+        doc.fontSize(18).text(this.nom, { underline: true });
+        doc.fontSize(12).text(`ID: ${this.id}`);
+        doc.text(`Domaine: ${this.domaine}`);
+        doc.moveDown();
+
+        this.sections.forEach(section => section.imprimer(doc));
+    }
+
 }
 
 

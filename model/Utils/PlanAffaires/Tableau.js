@@ -89,6 +89,45 @@ class Tableau {
             lignes: this.lignes.map(ligne => ligne.afficherElements())
         };
     }
+
+    imprimer(doc) {
+        doc.fontSize(14).text(this.nomTableau, { underline: true });
+        doc.moveDown();
+
+        const tableTop = doc.y;
+        const cellPadding = 5;
+        const colWidths = [100, 100, 100]; // Largeurs des colonnes (adapter selon le contenu)
+
+        // Imprimer chaque ligne du tableau
+        this.lignes.forEach((ligne, rowIndex) => {
+            ligne.elements.forEach((element, colIndex) => {
+                const x = doc.x + colWidths.slice(0, colIndex).reduce((a, b) => a + b, 0);
+                const y = tableTop + (rowIndex * 20);
+                const width = colWidths[colIndex];
+
+                doc.rect(x, y, width, 20).stroke();
+                doc.text(element.afficherElement(), x + cellPadding, y + cellPadding, {
+                    width: width - 2 * cellPadding,
+                    height: 20 - 2 * cellPadding,
+                    ellipsis: true
+                });
+            });
+        });
+
+        doc.moveDown();
+    }
+
+    // imprimer(doc) {
+    //     doc.fontSize(14).text(this.nomTableau, { underline: true });
+    //     doc.moveDown();
+
+    //     this.lignes.forEach(ligne => {
+    //         ligne.imprimer(doc);
+    //     });
+
+    //     doc.moveDown();
+    // }
+
 }
 
 

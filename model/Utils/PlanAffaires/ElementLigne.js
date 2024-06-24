@@ -7,6 +7,10 @@ class ElementLigne {
     afficherElement() {
         return this.element;
     }
+
+    imprimer(doc) {
+        doc.text(this.element, { continued: true });
+    }
 }
 
 export default ElementLigne;

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fisc Prédict</title>
+    <link rel="shortcut icon" sizes="1000"
+        href="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLogoDGI.jpg?alt=media&token=93baf2b2-67f9-4e65-b62d-6895ad910a9b&_gl=1*hsrack*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzU2NjYuNDguMC4w"
+        type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container" id="container">
+        <header>
+            <section class="window--buttons">
+                <div class="window__close"></div>
+
+                <div class="window__minimize"></div>
+
+                <div class="window__maximize"></div>
+            </section>
+        </header>
+
+        <!-- SIDE BAR  -->
+
+        <aside class="navbar">
+            <div>
+                <!-- <input type="text" placeholder="Ajouter un(e):" /><br /> -->
+                <button id="sidebar-btn" style="color: aqua;font-weight: bold;" class=""><em> Contribuables </em>
+                </button>
+                <!-- <button class="active" id="sidebar-btn">Un Bolg</button> -->
+                <!-- <button id="sidebar-btn" class="blog">supprime</button> -->
+                <button id="sidebar-btn" id="MailsContainer" class="MailsContainer">Particuliers</button>
+
+                <button id="sidebar-btn" class="containerArti">Entreprises</button>
+                <!-- <button id="sidebar-btn" class="btnformation"></button>
+                <button id="sidebar-btn" class="Evenements">Evènement</button>
+                <button id="sidebar-btn" class="colloc">collocques</button> -->
+
+                <button id="sidebar-btn" id="messagerecus" class="messagerecus">ONG </button>
+                <!-- <button id="sidebar-btn" id="formationInscrit" class="formationInscrit">formations</button> -->
+                <button id="sidebar-btn" style="color: red !important;" class="retour">Retour/Acceuil</button>
+
+            </div>
+
+            <div class="profile">
+                <img src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLogoDGI.jpg?alt=media&token=93baf2b2-67f9-4e65-b62d-6895ad910a9b&_gl=1*hsrack*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzU2NjYuNDguMC4w"
+                    alt="Profile Pic" class="profile--pic" />
+                <h1 href="/"></h1>
+            </div>
+        </aside>
+
+        <!-- BAR DE CONTENU DES TAXES  -->
+
+        <div class="content">
+
+            <!-- REDACTION DE BLOG  -->
+            <div class="blogation" id="blogation">
+                <h1 class="titi" style="color: black !important;">***Espace de redaction de Blog</h1> <br>
+                <h2>Ajouter une image descriptive</h2>
+                <div class="ideas banner" id="ideae">
+                    <input type="file" accept="image/*" id="banner-upload" class="fileup" hidden>
+                    <label class="fileup" for="banner-upload" class="banner-upload-btn"><img
+                            src="https://firebasestorage.googleapis.com/v0/b/lasmo-dcd6a.appspot.com/o/upload.png?alt=media&token=5416a864-c5af-456e-940b-a5a7893660bd"
+                            alt="upload banner"></label>
+                </div>
+
+                <section class="updates" id="bloge">
+                    <h1>Redigez</h1>
+
+                    <br>
+                    <textarea type="text" class="title" placeholder="Le titre de l'article..."></textarea> <br>
+                    <textarea type="text" class="article"
+                        placeholder="Commencer à écricre le contenue de l'article ici..."></textarea>
+
+                </section>
+                <section class="trending" id="trending">
+                    <div class="grid">
+                        <span class="grid__app">
+                            <h1>Publier</h1>
+                            <button class="btn dark publish-btn"><i class="fa fa-telegram"
+                                    style="font-size:25px"></i></button>
+                        </span>
+
+                        <span class="grid__app">
+                            <div class="blog-options">
+                                <input type="file" accept="image/*" id="image-upload" hidden>
+                                <label for="image-upload" class="btn grey upload-btn"
+                                    style="cursor: pointer !important;">Télécharger Image</label>
+                            </div>
+                        </span>
+                    </div>
+                </section>
+            </div>
+
+
+            <!-- ESPACE D'AJOUT D'OUVRAGE  -->
+            <section class="containerArticle" id="containerArticle">
+
+                <!-- <h2>Couverture du livre</h2> -->
+
+                <!-- <div class="ideas banner3 articl2" id="">
+                    <input type="file" accept="image/*" id="banner-upload3" class="fileup" hidden>
+                    <label class="fileup" for="banner-upload3" class="banner-upload-btn"><img src="https://firebasestorage.googleapis.com/v0/b/lasmo-dcd6a.appspot.com/o/upload.png?alt=media&token=5416a864-c5af-456e-940b-a5a7893660bd" alt="upload banner"></label>
+                </div> -->
+                <!-- <h1>photo de l'auteur</h1> 
+              <div class="ideas bannerauteur3 articl2" id="">
+                <input type="file" accept="image/*" id="banner-uploadauteur3" class="fileup" hidden>
+                <label class="fileup " for="banner-uploadauteur3" class="banner-upload-btn"><img src="assets/https://firebasestorage.googleapis.com/v0/b/lasmo-dcd6a.appspot.com/o/upload.png?alt=media&token=5416a864-c5af-456e-940b-a5a7893660bd" alt="upload banner"></label>
+              </div> -->
+                <div class="input-group" height='30'>
+                    <span class=" input-group-text" id="basic-addon1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </span>
+                    <input type="search" class="form-control" placeholder="Rechercher" aria-label="Rechercher"
+                        aria-describedby="basic-addon1">
+                    <button type="button" class="btn btn-outline-info"><strong>Ajouter une taxe</strong> </button>
+
+                </div>
+
+
+
+
+                <section class="updates articl" id="">
+                    <h1 style="color: black !important;">***Taxe Professionnelle Synthétique***</h1>
+                    <h2>Taux Actuel : 5%</h2>
+                    <textarea type="text" class="titleOuvrage" placeholder=" Modifier le taux ? "></textarea> <br>
+                    <h2>Redevance ORTB : 4 000fcfa</h2>
+                    <textarea type="text" class="auteurOuvrage" placeholder="Modifier la redevance ?"></textarea> <br>
+                    <h2>Impôt Minimum : 10 000fcfa</h2>
+                    <textarea type="text" class="editionOuvrage" placeholder="Modfier l'impôt minimum ? "></textarea>
+                </section>
+                <section class="trending articl1" id="">
+                    <div class="grid ">
+                        <span class="grid__app">
+                            <h1>Modifier</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                        <span class="grid__app sup_grid" style="cursor: pointer !important;">
+                            <h1>Supprimer</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+
+                    </div>
+                </section><br><br>
+
+                <section class="updates articl" id="">
+                    <h1 style="color: black !important;">***Impôt sur les Bénéfices d'affaires***</h1>
+                    <h2>Taux Actuel : 25%</h2>
+
+                    <textarea type="text" id="taux" class="titleOuvrage"
+                        placeholder="Etablissement Scolaire-Industie non extractive"></textarea> <br>
+                    <h2>Taux Actuel : 30%</h2>
+                    <textarea type="text" id="taux" class="titleOuvrage"
+                        placeholder="BTS-Station Service-Autres ..."></textarea> <br>
+
+                    <h2>Redevance ORTB : 4 000fcfa</h2>
+                    <textarea type="text" class="auteurOuvrage" placeholder="Modifier la redevance ?"></textarea> <br>
+                    <h2>Impôt Minimum? 500 000fcfa</h2>
+                    <textarea type="text" class="editionOuvrage" placeholder="Modfier l'impôt minimum ?"></textarea>
+                </section>
+                <section class="trending articl1" id="">
+                    <div class="grid ">
+                        <span class="grid__app" style="cursor: pointer !important;">
+                            <h1>Modifier</h1>
+                        </span>
+                        <span class="grid__app sup_grid" style="cursor: pointer !important;">
+                            <h1>Supprimer</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                    </div>
+                </section><br><br>
+
+                <section class="updates articl" id="">
+                    <h1 style="color: black !important;">***Impôt sur les Sociétés***</h1>
+                    <h2>Taux Actuel : 25%</h2>
+
+                    <textarea type="text" id="taux" class="titleOuvrage"
+                        placeholder="Etablissement Scolaire-Industie non extrative ..."></textarea> <br>
+                    <h2>Taux Actuel : 30%</h2>
+                    <textarea type="text" id="taux" class="titleOuvrage"
+                        placeholder="Société d'assurance-Dommage ..."></textarea> <br>
+
+                    <h2>Redevance ORTB : 4 000fcfa</h2>
+                    <textarea type="text" class="auteurOuvrage" placeholder="Modifier la redevance ?"></textarea> <br>
+                    <h2>Impôt Minimum : 250 000fcfa</h2>
+                    <textarea type="text" class="editionOuvrage" placeholder="Modfier l'impôt minimum ?"></textarea>
+                    <!-- <textarea type="text" class="prixOuvrage" placeholder="Prix de l'ouvrage..."></textarea> <br> -->
+                    <!-- <textarea type="text" class="abstractOuvrage" placeholder="Abstract de l'ouvrage..."></textarea> <br> -->
+                    <!-- <textarea type="text" class="googledriveOuvrage" placeholder="ID google Drive de l'ouvrage..."></textarea> <br> -->
+                </section>
+                <section class="trending articl1" id="">
+                    <div class="grid ">
+                        <span class="grid__app" style="cursor: pointer !important;">
+                            <h1>Modifier</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                        <span class="grid__app sup_grid" style="cursor: pointer !important;">
+                            <h1>Supprimer</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+
+                    </div>
+                </section><br><br>
+
+                <section class="updates articl" id="">
+                    <h1 style="color: black !important;">***Taxe de développement du Sport***</h1>
+                    <h2>Taux Actuel : 5%</h2>
+                    <textarea type="text" class="titleOuvrage" placeholder="Modifier le taux ?" type="number"
+                        step="0.01"></textarea>
+                </section>
+                <section class="trending articl1" id="">
+                    <div class="grid ">
+                        <span class="grid__app" style="cursor: pointer !important;">
+                            <h1>Modifier</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                        <span class="grid__app sup_grid" style="cursor: pointer !important;">
+                            <h1>Supprimer</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                    </div>
+                </section><br><br>
+
+            </section>
+
+
+            <!-- POUR LES FORMATIONS  -->
+            <section class="updates formation" id="formation">
+                <div class="containerFomration">
+                    <h1 style="color: black !important;">***Ajouter une formation</h1>
+                    <textarea type="text" class="titleformation" style="height: 40px !important;"
+                        placeholder="Quel Formation ?"></textarea> <br>
+                    <textarea type="text" class="Priceformation" style="height: 40px !important;"
+                        placeholder="Prix de la Formation ?"></textarea> <br>
+                    <span class="grid__app">
+                        <h1>Ajouter</h1>
+                        <button class="btn dark publish-btn formationajout" style="cursor: pointer !important;"><i
+                                class="fa fa-telegram" style="font-size:25px"></i></button>
+                    </span>
+                </div>
+            </section>
+
+            <div id="AjoutProjetEtColloc" style="display: none !important;">
+                <!-- POUR LES PROJETS DE RECHERCHES -->
+                <section class="updateprojet" id="projet">
+                    <div class="containerprojet">
+                        <h1 style="color: black !important;">***Ajouter un Projet de recherche</h1>
+                        <textarea type="text" class="titleprojet" style="height: 40px !important;"
+                            placeholder="Titre du projet de recherche"></textarea> <br>
+                        <textarea type="text" class="Descriptionprojet" style="height: 100px !important;"
+                            placeholder="Description du projet de recherche ?"></textarea> <br>
+                        <span class="grid__app">
+                            <h1>Ajouter</h1>
+                            <button class="btn dark publish-btn projetajout" style="cursor: pointer !important;"><i
+                                    class="fa fa-telegram" style="font-size:25px"></i></button>
+                        </span>
+                    </div>
+                </section> <br> <br> <br>
+
+                <!-- POUR LES ACTES DE COLLOCQUES  -->
+                <section class="updatecolloque" id="formation">
+                    <div class="containercolloque">
+                        <h1 style="color: black !important;">***Ajouter un colloc</h1>
+                        <textarea type="text" class="titlecolloque" style="height: 40px !important;"
+                            placeholder="Titre du colloque"></textarea> <br>
+                        <textarea type="text" class="Descriptioncolloc" style="height: 100px !important;"
+                            placeholder="Description du colloque (Date et lieu)"></textarea> <br>
+                        <span class="grid__app">
+                            <h1>Ajouter</h1>
+                            <button class="btn dark publish-btn colloqueajout" style="cursor: pointer !important;"> <i
+                                    class="fa fa-telegram" style="font-size:25px"></i></button>
+                        </span>
+                    </div>
+                </section>
+            </div>
+
+
+
+
+            <!-- POUR LES MESSAGES RECUS -->
+            <div class="containerMessages" style="display: none;">
+                <div class="input-group" height='30'>
+                    <span class=" input-group-text" id="basic-addon1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </span>
+                    <input type="search" class="form-control" placeholder="Rechercher" aria-label="Rechercher"
+                        aria-describedby="basic-addon1"> <button type="button"
+                        class="btn btn-outline-info"><strong>Ajouter une taxe</strong> </button>
+
+                </div>
+                <section class="updates articl" id="">
+                    <h1 style="color: black !important;">***Versement Patronal sur salaire***</h1>
+                    <h2>Taux Actuel : 2%</h2>
+                    <textarea type="text" id="taux" class="titleOuvrage" placeholder="Etablissement Privé" type="number"
+                        step="0.01"></textarea> <br>
+                </section>
+
+                <section class="updates articl" id="">
+                    <h2>Taux Actuel : 4%</h2>
+                    <textarea type="text" id="taux" class="titleOuvrage" placeholder="Autres ... "></textarea> <br>
+                </section>
+
+                <section class="trending articl1" id="">
+                    <div class="grid ">
+                        <span class="grid__app" style="cursor: pointer !important;">
+                            <h1>Modifier</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                        <span class="grid__app sup_grid" style="cursor: pointer !important;">
+                            <h1>Supprimer</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                    </div>
+                </section><br><br>
+            </div>
+
+
+            <!-- POUR LES INSCRITS AUX FORMATIONS -->
+            <div class="containerInscrits" style="display: none !important;">
+                <h1 style="color: black !important;">***Recueil des inscrits aux Formations</h1>
+                <table id="tableau" style="border: 1px;">
+                    <tr>
+                        <th style="font-size: 15px;">Nom et prenoms</th>
+                        <th style="font-size: 15px;">E-mail</th>
+                        <th style="font-size: 15px;">Telephone</th>
+                        <th style="font-size: 15px;">Formations</th>
+                    </tr>
+                </table>
+            </div>
+
+
+            <div class="containerNewsletter">
+                <div class="input-group" height='30'>
+                    <span class=" input-group-text" id="basic-addon1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </span>
+                    <input type="search" class="form-control" placeholder="Rechercher" aria-label="Rechercher"
+                        aria-describedby="basic-addon1"> <button type="button"
+                        class="btn btn-outline-info"><strong>Ajouter une taxe</strong> </button>
+
+                </div>
+                <section class="updates articl" id="">
+                    <h1 style="color: black !important;">***Impôt sur les revenus fonciers***</h1>
+                    <h2>Taux Actuel : 12%</h2>
+                    <textarea type="text" id="taux" class="titleOuvrage" placeholder="Modifier le taux ?" type="number"
+                        step="0.01"></textarea> <br>
+
+                </section>
+                <section class="trending articl1" id="">
+                    <div class="grid ">
+                        <span class="grid__app" style="cursor: pointer !important;">
+                            <h1>Modifier</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                        <span class="grid__app sup_grid" style="cursor: pointer !important;">
+                            <h1>Supprimer</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                    </div>
+                </section><br><br>
+
+                <section class="updates articl" id="">
+                    <h1 style="color: black !important;">***Taxe sur la plus-value immobilière***</h1>
+                    <h2>Taux Actuel : 5%</h2>
+                    <textarea type="text" id="taux" class="titleOuvrage" placeholder="Modifier le taux ?" type="number"
+                        step="0.01"></textarea> <br>
+                </section>
+                <section class="trending articl1" id="">
+                    <div class="grid ">
+                        <span class="grid__app" style="cursor: pointer !important;">
+                            <h1>Modifier</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                        <span class="grid__app sup_grid" style="cursor: pointer !important;">
+                            <h1>Supprimer</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                    </div>
+                </section><br><br>
+
+                <section class="updates articl" id="">
+                    <h1 style="color: black !important;">***Droit d'enrégistrement***</h1>
+                    <h2>Taux Actuel : 5%</h2>
+                    <textarea type="text" id="taux" class="titleOuvrage" placeholder="Modifier le taux ?" type="number"
+                        step="0.01"></textarea> <br>
+                </section>
+                <section class="trending articl1" id="">
+                    <div class="grid ">
+                        <span class="grid__app" style="cursor: pointer !important;">
+                            <h1>Modifier</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                        <span class="grid__app sup_grid" style="cursor: pointer !important;">
+                            <h1>Supprimer</h1>
+                            <button style="cursor:pointer;" class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                    </div>
+                </section><br><br>
+
+                <section class="updates articl" id="">
+                    <h1 style="color: black !important;">***Taxe foncière unique***</h1>
+                    <h2>Taux Actuel : 12%</h2>
+                    <textarea type="text" id="taux" class="titleOuvrage" placeholder="Modifier le taux ?" type="number"
+                        step="0.01"></textarea> <br>
+                </section>
+                <section class="trending articl1" id="">
+                    <div class="grid ">
+                        <span class="grid__app" style="cursor: pointer !important;">
+                            <h1>Modifier</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                        <span class="grid__app sup_grid" style="cursor: pointer !important;">
+                            <h1>Supprimer</h1>
+                            <button class="btn dark publish-btn " id="ouvrageAjout"
+                                style="cursor: pointer !important;"></button>
+                        </span>
+                    </div>
+                </section><br><br>
+            </div>
+
+            <!-- POUR AJOUTER DES EVENEMENTS  -->
+            <div class="EventContainer" id="EventContainer">
+                <div class="blogationnEvent" id="blogationnEvent">
+                    <h1 class="titi" style="color: black !important;">***Espace d'ajout d'évènements</h1> <br>
+                    <h2>Ajouter une image descriptive de l'évènement</h2>
+                    <!-- souci  -->
+                    <div class="ideasEvent bannerEvent" id="ideaeEvent">
+                        <input type="file" accept="image/*" id="banner-uploadEvent" class="fileup" hidden>
+                        <label class="fileup" for="banner-uploadEvent" class="banner-upload-btnEvent"><img
+                                src="https://firebasestorage.googleapis.com/v0/b/lasmo-dcd6a.appspot.com/o/upload.png?alt=media&token=5416a864-c5af-456e-940b-a5a7893660bd"
+                                alt="upload banner"></label>
+                    </div>
+                    <!-- souci  -->
+                    <section class="updatesEvent" id="bloge">
+                        <h1>Redigez</h1>
+                        <!-- souci  -->
+                        <br>
+                        <textarea type="text" class="titleEvent" placeholder="Titre de l'évènement..."></textarea> <br>
+                        <textarea type="text" class="articleEvent" placeholder="Date et lieu..."></textarea>
+                        <!-- souci  -->
+                    </section>
+                    <section class="trendingEvent" id="trendingEvent">
+                        <div class="grid">
+                            <span class="grid__app">
+                                <h1>Publier</h1>
+                                <button id="EventTransfer" class="btn dark publish-btn"><i class="fa fa-telegram"
+                                        style="font-size:25px"></i></button>
+                            </span>
+                        </div>
+                    </section>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- Jquery Library file -->
+    <script src="./js/Jquery3.4.1.min.js"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="./js/owl.carousel.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="./js/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <!-- <script src="./js/main.js"></script> -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+    <script src="js/firebase.js"></script>
+    <!-- <script src="js/editor.js"></script> -->
+    <script src="js/editor1.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4420N5Z9KX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4420N5Z9KX');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

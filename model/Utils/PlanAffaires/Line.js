@@ -52,6 +52,15 @@ class Ligne {
     afficherElements() {
         return this.elements.map(elementLigne => elementLigne.element);
     }
+
+    imprimer(doc) {
+        this.elements.forEach(elementLigne => {
+            elementLigne.imprimer(doc);
+        });
+        doc.text("\n"); // Aller à la ligne suivante après chaque ligne
+    }
+
+    
 }
 
 export default Ligne;

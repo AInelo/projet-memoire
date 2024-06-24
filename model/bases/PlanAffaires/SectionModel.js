@@ -127,6 +127,7 @@ class SectionModel {
 
         try {
             const [rows] = await db.execute(sql, [planAffaireId]);
+            console.log(rows)
             const sections = [];
 
             for (const row of rows) {

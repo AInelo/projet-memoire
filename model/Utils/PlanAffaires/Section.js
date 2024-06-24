@@ -96,6 +96,35 @@ class Section {
             }))
         };
     }
+
+
+    // imprimer(doc) {
+    //     doc.fontSize(16).text(this.titre, { underline: true });
+    //     doc.moveDown();
+        
+    //     this.tableaux.forEach(tableau => {
+    //         tableau.imprimer(doc);
+    //     });
+
+    //     this.sectionContenus.forEach(sectionContenu => {
+    //         sectionContenu.imprimer(doc);
+    //     });
+
+    //     doc.moveDown();
+    // }
+
+
+    imprimer(doc) {
+        doc.addPage().fontSize(16).text(this.titre, { underline: true });
+        doc.moveDown();
+
+        this.tableaux.forEach(tableau => tableau.imprimer(doc));
+        this.sectionContenus.forEach(content => {
+            doc.fontSize(14).text(content.titreSousSection, { underline: true });
+            doc.fontSize(12).text(content.contenuSousSection);
+            doc.moveDown();
+        });
+    }
 }
 
 

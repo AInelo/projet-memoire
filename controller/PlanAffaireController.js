@@ -15,25 +15,78 @@ class PlanAffaireController {
         }
     }
 
-    static async getOnePlanAffaire(req, res) {
-        const { id } = req.params;
+
+ // const { id } = req.params;
+        // // try {
+        // //     const details = await PlanAffaireModel.getPlanAffaireDetails(id);
+        // //     res.status(200).json(details);
+        // // } catch (error) {
+        // //     res.status(500).json({ message: 'Erreur lors de la récupération des détails du plan d\'affaire', error: error.message });
+        // // }
+
         // try {
         //     const details = await PlanAffaireModel.getPlanAffaireDetails(id);
-        //     res.status(200).json(details);
+        //     if (details) {
+        //         res.status(200).json(details);
+        //     } else {
+        //         res.status(404).json({ message: 'Plan d\'affaire non trouvé' });
+        //     }
         // } catch (error) {
         //     res.status(500).json({ message: 'Erreur lors de la récupération des détails du plan d\'affaire', error: error.message });
         // }
 
-        try {
-            const details = await PlanAffaireModel.getPlanAffaireDetails(id);
-            if (details) {
-                res.status(200).json(details);
-            } else {
-                res.status(404).json({ message: 'Plan d\'affaire non trouvé' });
+
+        static async getOnePlanAffaire(req, res) {
+            const planAffaireId = req.params.id;
+            console.log("id is :", planAffaireId);
+            
+            try {
+                const planAffaire = await PlanAffaireModel.getPlanAffaireDetails(planAffaireId);
+                console.log('Fetched planAffaire:', planAffaire);
+    
+                if (!planAffaire) {
+                    console.log("Plan d'affaire non trouvé");
+                    return res.status(404).json({ message: "Plan d'affaire non trouvé" });
+                }
+    
+                console.log("Request successfully worked !");
+                console.log(planAffaire);
+    
+                return res.status(200).json(planAffaire);
+            } catch (error) {
+                console.error('Erreur lors de la récupération du plan d\'affaire', error);
+                return res.status(500).json({ message: 'Erreur interne du serveur' });
             }
-        } catch (error) {
-            res.status(500).json({ message: 'Erreur lors de la récupération des détails du plan d\'affaire', error: error.message });
         }
+
+
+
+
+
+
+
+    static async getOnePlanAffaire_Current(req, res) {
+       
+
+        const planAffaireId = req.params.id;
+        console.log("id is :", planAffaireId);
+        
+        try {
+            const planAffaire = await PlanAffaireModel.getPlanAffaireDetails(planAffaireId);
+
+            if (!planAffaire) {
+                return res.status(404).json({ message: "Plan d'affaire non trouvé" });
+            }
+
+            console.log("Request successfully worked !");
+            console.log(planAffaire);
+
+            return res.status(200).json(planAffaire);
+        } catch (error) {
+            console.error('Erreur lors de la récupération du plan d\'affaire', error);
+            return res.status(500).json({ message: 'Erreur interne du serveur' });
+        }
+
     }
 }
 

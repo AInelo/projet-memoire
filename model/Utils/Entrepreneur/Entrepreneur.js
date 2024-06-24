@@ -1,5 +1,13 @@
 // const worker = new Worker
 import PlanAffaire from "../PlanAffaires/PlanAffaire.js";
+import PDFDocument from 'pdfkit';
+import { createWriteStream } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs/promises';
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 // class Entrepreneur {
 //     constructor(id, nom, email, motDePasse) {
 //         this.id = id;
@@ -48,6 +56,272 @@ class Entrepreneur {
         this.motDePasse = motDePasse;
         this.plansAffaire = [];
     }
+
+
+    static async printPlanAffaire(planAffaire) {
+        try {
+            // const publicDir = join(__dirname, '../../../public/pdf');
+            // await fs.mkdir(publicDir, { recursive: true });
+            // const pdfFilePath = join(publicDir, `plan_affaire_${planAffaire.id}.pdf`);
+            // const output = fs.createWriteStream(pdfFilePath);
+
+            const publicDir = join(__dirname, '../../../public/pdf');
+
+            // Vérifier si le répertoire public existe, sinon le créer
+            await fs.mkdir(publicDir, { recursive: true });
+
+            // Chemin complet du fichier PDF de sortie
+            const pdfFilePath = join(publicDir, `plan_affaire_${planAffaire.id}.pdf`);
+
+            // Créer un writable stream pour le fichier de sortie
+            const output = createWriteStream(pdfFilePath);
+
+            const doc = new PDFDocument();
+
+            // Pipe le document PDF vers le fichier de sortie
+            doc.pipe(output);
+
+            // // Ajoute le contenu du plan d'affaire dans le PDF
+            // doc.fontSize(20).text(`Plan d'affaire ${planAffaire.id}`, { align: 'center' });
+            // doc.moveDown();
+
+            // // Pour chaque section du plan d'affaire
+            // planAffaire.sections.forEach(section => {
+            //     doc.fontSize(16).text(section.titre, { underline: true });
+            //     doc.moveDown();
+
+            //     // Pour chaque tableau dans la section
+            //     section.tableaux.forEach(tableau => {
+            //         doc.fontSize(14).text(tableau.nom_tableau, { underline: true });
+            //         doc.moveDown();
+
+            //         // Construire le tableau avec ses lignes et éléments
+            //         tableau.lignes.forEach(ligne => {
+            //             // Construction de chaque ligne du tableau
+            //             ligne.elements.forEach(element => {
+            //                 // Ajouter les éléments du tableau avec des positions et des styles ajustables
+            //                 doc.text(element.element, { width: 200, align: 'left' });
+            //             });
+            //             doc.moveDown();
+            //         });
+
+            //         doc.moveDown();
+            //     });
+
+            //     doc.moveDown();
+            // });
+
+            planAffaire.imprimer(doc);
+            // Finaliser le document PDF
+            doc.end();
+
+
+            console.log(`Le fichier PDF pour le plan d'affaire ${planAffaire.id} a été généré avec succès.`);
+        } catch (error) {
+            console.error('Erreur lors de la génération du fichier PDF :', error);
+        }
+    }
+
+
+
+
+    static async printPlanAffaireCurrent(planAffaire) {
+        // // Créer le chemin de sortie pour le fichier PDF
+        // const outputPath = join(__dirname, 'pdf', `plan_affaire_${planAffaire.id}.pdf`);
+
+        // // Créer un writable stream pour le fichier de sortie
+        // const output = createWriteStream(outputPath);
+        const publicDir = join(__dirname, '../../../public/pdf');
+
+            // Vérifier si le répertoire public existe, sinon le créer
+            await fs.mkdir(publicDir, { recursive: true });
+
+            // Chemin complet du fichier PDF de sortie
+            const pdfFilePath = join(publicDir, `plan_affaire_${planAffaire.id}.pdf`);
+
+            // Créer un writable stream pour le fichier de sortie
+            const output = createWriteStream(pdfFilePath);
+
+        // Créer un nouveau document PDF
+        const doc = new PDFDocument();
+
+        // Pipe le document PDF vers le fichier de sortie
+        doc.pipe(output);
+
+        // Ajouter le titre du plan d'affaire
+        doc.fontSize(30)
+           .text(`Plan d'affaire ${planAffaire.nom}`, {
+               align: 'center',
+               underline: true
+           });
+
+        doc.moveDown(2);
+
+        // Itérer sur les sections du plan d'affaire
+        planAffaire.sections.forEach(section => {
+            // Ajouter le titre de la section
+            doc.fontSize(20)
+               .text(section.titre, {
+                   align: 'center',
+                   underline: true
+               });
+
+            doc.moveDown(1);
+
+            // Vérifier si la section a des sous-sections
+            if (section.sous_sections && section.sous_sections.length > 0) {
+                // Itérer sur les sous-sections
+                section.sous_sections.forEach(sousSection => {
+                    // Ajouter le titre de la sous-section
+                    doc.fontSize(16)
+                       .text(sousSection.titre_partie, {
+                           align: 'left',
+                           underline: true
+                       });
+
+                    doc.moveDown(0.5);
+
+                    // Ajouter le contenu de la sous-section
+                    doc.fontSize(12)
+                       .text(sousSection.contenus, {
+                           align: 'justify'
+                       });
+
+                    doc.moveDown(1);
+                });
+            }
+
+            // Vérifier si la section a des tableaux
+            if (section.tableaux && section.tableaux.length > 0) {
+                // Itérer sur les tableaux
+                section.tableaux.forEach(tableau => {
+                    // Ajouter le titre du tableau
+                    doc.fontSize(16)
+                       .text(tableau.nom_tableau, {
+                           align: 'center',
+                           underline: true
+                       });
+
+                    doc.moveDown(0.5);
+
+                    // Itérer sur les lignes du tableau
+                    tableau.lignes.forEach(ligne => {
+                        // Construire une chaîne avec les éléments de la ligne
+                        const elements = ligne.elements.map(element => element.element).join(', ');
+
+                        // Ajouter la ligne au tableau
+                        doc.fontSize(12)
+                           .text(elements, {
+                               align: 'left'
+                           });
+
+                        doc.moveDown(0.5);
+                    });
+
+                    doc.moveDown(1);
+                });
+            }
+
+            doc.moveDown(1);
+        });
+
+        // Finaliser le document PDF
+        doc.end();
+
+        console.log(`Le fichier PDF pour le plan d'affaire ${planAffaire.id} a été généré avec succès.`);
+    }
+
+
+    static printPlanAffaireCurrent(planAffaire) {
+        // Créer le chemin de sortie pour le fichier PDF
+        const outputPath = join(__dirname, 'pdf', `plan_affaire_${planAffaire.id}.pdf`);
+
+        // Créer un writable stream pour le fichier de sortie
+        const output = createWriteStream(outputPath);
+
+        // Créer un nouveau document PDF
+        const doc = new PDFDocument();
+
+        // Pipe le document PDF vers le fichier de sortie
+        doc.pipe(output);
+
+        // Ajouter le titre du plan d'affaire
+        doc.fontSize(30)
+           .text(`Plan d'affaire ${planAffaire.plan_affaire_nom}`, {
+               align: 'center',
+               underline: true
+           });
+
+        doc.moveDown(2);
+
+        // Itérer sur les sections du plan d'affaire
+        planAffaire.sections.forEach(section => {
+            // Ajouter le titre de la section
+            doc.fontSize(20)
+               .text(section.titre, {
+                   align: 'center',
+                   underline: true
+               });
+
+            doc.moveDown(1);
+
+            // Itérer sur les sous-sections
+            section.sous_sections.forEach(sousSection => {
+                // Ajouter le titre de la sous-section
+                doc.fontSize(16)
+                   .text(sousSection.titre_partie, {
+                       align: 'left',
+                       underline: true
+                   });
+
+                doc.moveDown(0.5);
+
+                // Ajouter le contenu de la sous-section
+                doc.fontSize(12)
+                   .text(sousSection.contenus, {
+                       align: 'justify'
+                   });
+
+                doc.moveDown(1);
+            });
+
+            // Itérer sur les tableaux
+            section.tableaux.forEach(tableau => {
+                // Ajouter le titre du tableau
+                doc.fontSize(16)
+                   .text(tableau.nom_tableau, {
+                       align: 'center',
+                       underline: true
+                   });
+
+                doc.moveDown(0.5);
+
+                // Itérer sur les lignes du tableau
+                tableau.lignes.forEach(ligne => {
+                    // Construire une chaîne avec les éléments de la ligne
+                    const elements = ligne.elements.map(element => element.element).join(', ');
+
+                    // Ajouter la ligne au tableau
+                    doc.fontSize(12)
+                       .text(elements, {
+                           align: 'left'
+                       });
+
+                    doc.moveDown(0.5);
+                });
+
+                doc.moveDown(1);
+            });
+
+            doc.moveDown(1);
+        });
+
+        // Finaliser le document PDF
+        doc.end();
+
+        console.log(`Le fichier PDF pour le plan d'affaire ${planAffaire.id} a été généré avec succès.`);
+    }
+
 
     saisirDonnees(donnees) {
         // Méthode pour saisir des données entrepreneuriales
