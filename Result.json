@@ -1,0 +1,142 @@
+{
+    "id": 2,
+    "entrepreneur_id": 123,
+    "plan_affaire_nom": "Plan Affaire Technologie",
+    "domaine": "Technologie",
+    "chemin_acces_pdf_file": "chemin/vers/le/fichier.pdf",
+    "chemin_acces_word_file": "chemin/vers/le/fichier.docx",
+    "chemin_acces_donnees_financiere": "chemin/vers/les/donnees_financieres.csv",
+    "chemin_acces_donnees_financiere_traite": "chemin/vers/les/donnees_financieres_traite.csv",
+    "sections": [
+        {
+            "id": 4,
+            "titre": "Présentation du Projet",
+            "sous_sections": [
+                {
+                    "id": 4,
+                    "titre_partie": "Introduction",
+                    "contenus": "Description détaillée du projet"
+                }
+            ],
+            "tableaux": [
+                {
+                    "id": 4,
+                    "nom_tableau": "Objectifs",
+                    "lignes": [
+                        {
+                            "id": 6,
+                            "elements": [
+                                {
+                                    "id": 13,
+                                    "element": "Objectif 1"
+                                },
+                                {
+                                    "id": 14,
+                                    "element": "Objectif 2"
+                                },
+                                {
+                                    "id": 15,
+                                    "element": "Objectif 3"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 7,
+                            "elements": [
+                                {
+                                    "id": 16,
+                                    "element": "Objectif 4"
+                                },
+                                {
+                                    "id": 17,
+                                    "element": "Objectif 5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "titre": "Analyse de Marché",
+            "sous_sections": [
+                {
+                    "id": 5,
+                    "titre_partie": "Résumé",
+                    "contenus": "Résumé des études de marché"
+                }
+            ],
+            "tableaux": [
+                {
+                    "id": 5,
+                    "nom_tableau": "Études de marché",
+                    "lignes": [
+                        {
+                            "id": 8,
+                            "elements": [
+                                {
+                                    "id": 18,
+                                    "element": "Analyse 1"
+                                },
+                                {
+                                    "id": 19,
+                                    "element": "Analyse 2"
+                                },
+                                {
+                                    "id": 20,
+                                    "element": "Analyse 3"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 9,
+                            "elements": [
+                                {
+                                    "id": 21,
+                                    "element": "Analyse 4"
+                                },
+                                {
+                                    "id": 22,
+                                    "element": "Analyse 5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "titre": "Plan Financier",
+            "sous_sections": [
+                {
+                    "id": 6,
+                    "titre_partie": "Détails Financiers",
+                    "contenus": "Description des prévisions financières"
+                }
+            ],
+            "tableaux": [
+                {
+                    "id": 6,
+                    "nom_tableau": "Prévisions financières",
+                    "lignes": [
+                        {
+                            "id": 10,
+                            "elements": [
+                                {
+                                    "id": 23,
+                                    "element": "Prévision 1"
+                                },
+                                {
+                                    "id": 24,
+                                    "element": "Prévision 2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

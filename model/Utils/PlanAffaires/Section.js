@@ -26,47 +26,6 @@
 import Tableau from './Tableau.js';
 import SectionContenu from './SectionContenu.js';
 
-// class Section {
-//     constructor(titre) {
-//         this.titre = titre;
-//         this.tableaux = [];
-//         this.sectionContenus = [];
-//     }
-
-//     ajouterTableau(nomTableau) {
-//         const tableau = new Tableau(nomTableau);
-//         this.tableaux.push(tableau);
-//     }
-
-//     ajouterSectionContenu(titreSousSection, contenuSousSection) {
-//         const sectionContenu = new SectionContenu(titreSousSection, contenuSousSection);
-//         this.sectionContenus.push(sectionContenu);
-//     }
-
-//     supprimerTableau(index) {
-//         this.tableaux.splice(index, 1);
-//     }
-
-//     supprimerSectionContenu(index) {
-//         this.sectionContenus.splice(index, 1);
-//     }
-
-//     afficherTableaux() {
-//         return this.tableaux.map(tableau => ({
-//             nomTableau: tableau.nomTableau,
-//             lignes: tableau.afficherLignes()
-//         }));
-//     }
-
-//     afficherSectionContenus() {
-//         return this.sectionContenus.map(sectionContenu => ({
-//             titreSousSection: sectionContenu.titreSousSection,
-//             contenuSousSection: sectionContenu.contenuSousSection
-//         }));
-//     }
-// }
-
-
 class Section {
     constructor(titre) {
         this.titre = titre;
@@ -77,59 +36,108 @@ class Section {
     ajouterTableau(nomTableau) {
         const tableau = new Tableau(nomTableau);
         this.tableaux.push(tableau);
-        return tableau
     }
 
     ajouterSectionContenu(titreSousSection, contenuSousSection) {
         const sectionContenu = new SectionContenu(titreSousSection, contenuSousSection);
         this.sectionContenus.push(sectionContenu);
-        return sectionContenu
     }
 
-    afficherContenus() {
-        return {
-            titre: this.titre,
-            tableaux: this.tableaux.map(tableau => tableau.afficherDetails()),
-            sectionContenus: this.sectionContenus.map(content => ({
-                titreSousSection: content.titreSousSection,
-                contenuSousSection: content.contenuSousSection
-            }))
-        };
+    supprimerTableau(index) {
+        this.tableaux.splice(index, 1);
     }
 
+    supprimerSectionContenu(index) {
+        this.sectionContenus.splice(index, 1);
+    }
 
-    // imprimer(doc) {
-    //     doc.fontSize(16).text(this.titre, { underline: true });
-    //     doc.moveDown();
-        
-    //     this.tableaux.forEach(tableau => {
-    //         tableau.imprimer(doc);
-    //     });
+    afficherTableaux() {
+        return this.tableaux.map(tableau => ({
+            nomTableau: tableau.nomTableau,
+            lignes: tableau.afficherLignes()
+        }));
+    }
 
-    //     this.sectionContenus.forEach(sectionContenu => {
-    //         sectionContenu.imprimer(doc);
-    //     });
-
-    //     doc.moveDown();
-    // }
-
-
-    imprimer(doc) {
-        doc.addPage().fontSize(16).text(this.titre, { underline: true });
-        doc.moveDown();
-
-        this.tableaux.forEach(tableau => tableau.imprimer(doc));
-        this.sectionContenus.forEach(content => {
-            doc.fontSize(14).text(content.titreSousSection, { underline: true });
-            doc.fontSize(12).text(content.contenuSousSection);
-            doc.moveDown();
-        });
+    afficherSectionContenus() {
+        return this.sectionContenus.map(sectionContenu => ({
+            titreSousSection: sectionContenu.titreSousSection,
+            contenuSousSection: sectionContenu.contenuSousSection
+        }));
     }
 }
 
 
 
+
+// class Section {
+//     constructor(titre) {
+//         this.titre = titre;
+//         this.tableaux = [];
+//         this.sectionContenus = [];
+//     }
+
+//     ajouterTableau(nomTableau) {
+//         const tableau = new Tableau(nomTableau);
+//         this.tableaux.push(tableau);
+//         return tableau
+//     }
+
+//     ajouterSectionContenu(titreSousSection, contenuSousSection) {
+//         const sectionContenu = new SectionContenu(titreSousSection, contenuSousSection);
+//         this.sectionContenus.push(sectionContenu);
+//         return sectionContenu
+//     }
+
+//     afficherContenus() {
+//         return {
+//             titre: this.titre,
+//             tableaux: this.tableaux.map(tableau => tableau.afficherDetails()),
+//             sectionContenus: this.sectionContenus.map(content => ({
+//                 titreSousSection: content.titreSousSection,
+//                 contenuSousSection: content.contenuSousSection
+//             }))
+//         };
+//     }
+
+// }
+
+
+
 export default Section;
+
+
+
+    // // imprimer(doc) {
+    // //     doc.fontSize(16).text(this.titre, { underline: true });
+    // //     doc.moveDown();
+        
+    // //     this.tableaux.forEach(tableau => {
+    // //         tableau.imprimer(doc);
+    // //     });
+
+    // //     this.sectionContenus.forEach(sectionContenu => {
+    // //         sectionContenu.imprimer(doc);
+    // //     });
+
+    // //     doc.moveDown();
+    // // }
+
+
+    // imprimer(doc) {
+    //     doc.addPage().fontSize(16).text(this.titre, { underline: true });
+    //     doc.moveDown();
+
+    //     this.tableaux.forEach(tableau => tableau.imprimer(doc));
+    //     this.sectionContenus.forEach(content => {
+    //         doc.fontSize(14).text(content.titreSousSection, { underline: true });
+    //         doc.fontSize(12).text(content.contenuSousSection);
+    //         doc.moveDown();
+    //     });
+    // }
+
+
+
+
 
 // const section = new Section('Présentation du Promoteur ');
 // // section.ajouterTableau('Tableau 1');

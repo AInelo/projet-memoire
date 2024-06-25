@@ -70,65 +70,6 @@ import Section from "./Section.js";
 // export default PlanAffaire
 
 
-// class PlanAffaire {
-//     constructor(id, entrepreneurId, nom, domaine, cheminAccesPdf, cheminAccesWord, cheminAccesDonneesFinancieres, cheminAccesDonneesFinancieresTraite) {
-//         this.id = id;
-//         this.entrepreneurId = entrepreneurId;
-//         this.nom = nom;
-//         this.domaine = domaine;
-//         this.cheminAccesPdf = cheminAccesPdf;
-//         this.cheminAccesWord = cheminAccesWord;
-//         this.cheminAccesDonneesFinancieres = cheminAccesDonneesFinancieres;
-//         this.cheminAccesDonneesFinancieresTraite = cheminAccesDonneesFinancieresTraite;
-//         this.sections = [];
-//     }
-
-//     personnaliserSections(sections) {
-//         this.sections = sections;
-//     }
-
-//     ajouterSection(titreSection) {
-//         const section = new Section(titreSection);
-//         this.sections.push(section);
-//     }
-
-//     supprimerSection(titreSection) {
-//         this.sections = this.sections.filter(section => section.titre !== titreSection);
-//     }
-
-//     afficherSections() {
-//         return this.sections.map(section => section.titre).join(', ');
-//     }
-
-//     afficherPlan() {
-//         return {
-//             id: this.id,
-//             entrepreneurId: this.entrepreneurId,
-//             nom: this.nom,
-//             domaine: this.domaine,
-//             cheminAccesPdf: this.cheminAccesPdf,
-//             cheminAccesWord: this.cheminAccesWord,
-//             cheminAccesDonneesFinancieres: this.cheminAccesDonneesFinancieres,
-//             cheminAccesDonneesFinancieresTraite: this.cheminAccesDonneesFinancieresTraite,
-//             sections: this.sections.map(section => ({
-//                 titre: section.titre,
-//                 tableaux: section.tableaux.map(tableau => tableau.nomTableau),
-//                 sectionContenus: section.sectionContenus.map(content => ({
-//                     titreSousSection: content.titreSousSection,
-//                     contenuSousSection: content.contenuSousSection
-//                 }))
-//             }))
-//         };
-//     }
-
-//     afficherContenuSection(titreSection) {
-//         const section = this.sections.find(section => section.titre === titreSection);
-//         return section ? section.afficherContenus() : 'Section non trouvée';
-//     }
-// }
-
-
-
 class PlanAffaire {
     constructor(id, entrepreneurId, nom, domaine, cheminAccesPdf, cheminAccesWord, cheminAccesDonneesFinancieres, cheminAccesDonneesFinancieresTraite) {
         this.id = id;
@@ -149,10 +90,7 @@ class PlanAffaire {
     ajouterSection(titreSection) {
         const section = new Section(titreSection);
         this.sections.push(section);
-        return section; // Retourner la nouvelle section
     }
-
-   
 
     supprimerSection(titreSection) {
         this.sections = this.sections.filter(section => section.titre !== titreSection);
@@ -172,7 +110,14 @@ class PlanAffaire {
             cheminAccesWord: this.cheminAccesWord,
             cheminAccesDonneesFinancieres: this.cheminAccesDonneesFinancieres,
             cheminAccesDonneesFinancieresTraite: this.cheminAccesDonneesFinancieresTraite,
-            sections: this.sections.map(section => section.afficherContenus())
+            sections: this.sections.map(section => ({
+                titre: section.titre,
+                tableaux: section.tableaux.map(tableau => tableau.nomTableau),
+                sectionContenus: section.sectionContenus.map(content => ({
+                    titreSousSection: content.titreSousSection,
+                    contenuSousSection: content.contenuSousSection
+                }))
+            }))
         };
     }
 
@@ -180,6 +125,70 @@ class PlanAffaire {
         const section = this.sections.find(section => section.titre === titreSection);
         return section ? section.afficherContenus() : 'Section non trouvée';
     }
+}
+
+
+
+// class PlanAffaire {
+//     constructor(id, entrepreneurId, nom, domaine, cheminAccesPdf, cheminAccesWord, cheminAccesDonneesFinancieres, cheminAccesDonneesFinancieresTraite) {
+//         this.id = id;
+//         this.entrepreneurId = entrepreneurId;
+//         this.nom = nom;
+//         this.domaine = domaine;
+//         this.cheminAccesPdf = cheminAccesPdf;
+//         this.cheminAccesWord = cheminAccesWord;
+//         this.cheminAccesDonneesFinancieres = cheminAccesDonneesFinancieres;
+//         this.cheminAccesDonneesFinancieresTraite = cheminAccesDonneesFinancieresTraite;
+//         this.sections = [];
+//     }
+
+//     personnaliserSections(sections) {
+//         this.sections = sections;
+//     }
+
+//     ajouterSection(titreSection) {
+//         const section = new Section(titreSection);
+//         this.sections.push(section);
+//         return section; // Retourner la nouvelle section
+//     }
+
+
+//     supprimerSection(titreSection) {
+//         this.sections = this.sections.filter(section => section.titre !== titreSection);
+//     }
+
+//     afficherSections() {
+//         return this.sections.map(section => section.titre).join(', ');
+//     }
+
+//     afficherPlan() {
+//         return {
+//             id: this.id,
+//             entrepreneurId: this.entrepreneurId,
+//             nom: this.nom,
+//             domaine: this.domaine,
+//             cheminAccesPdf: this.cheminAccesPdf,
+//             cheminAccesWord: this.cheminAccesWord,
+//             cheminAccesDonneesFinancieres: this.cheminAccesDonneesFinancieres,
+//             cheminAccesDonneesFinancieresTraite: this.cheminAccesDonneesFinancieresTraite,
+//             sections: this.sections.map(section => section.afficherContenus())
+//         };
+//     }
+
+//     afficherContenuSection(titreSection) {
+//         const section = this.sections.find(section => section.titre === titreSection);
+//         return section ? section.afficherContenus() : 'Section non trouvée';
+//     }
+
+
+
+// }
+
+
+
+
+export default PlanAffaire;
+
 
 
     // imprimer(doc) {
@@ -191,24 +200,14 @@ class PlanAffaire {
     //     });
     // }
 
-    imprimer(doc) {
-        doc.fontSize(18).text(this.nom, { underline: true });
-        doc.fontSize(12).text(`ID: ${this.id}`);
-        doc.text(`Domaine: ${this.domaine}`);
-        doc.moveDown();
+    // imprimer(doc) {
+    //     doc.fontSize(18).text(this.nom, { underline: true });
+    //     doc.fontSize(12).text(`ID: ${this.id}`);
+    //     doc.text(`Domaine: ${this.domaine}`);
+    //     doc.moveDown();
 
-        this.sections.forEach(section => section.imprimer(doc));
-    }
-
-}
-
-
-
-
-export default PlanAffaire;
-
-
-
+    //     this.sections.forEach(section => section.imprimer(doc));
+    // }
 
 
 

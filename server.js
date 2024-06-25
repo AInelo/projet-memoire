@@ -22,39 +22,14 @@ let initial_path = join(__dirname, "public");
 const app = express();
 
 app.use(express.static(initial_path));app.use(fileupload());
-
+app.use(express.json());
 
 import plan_affaire from './routes/PlanAffaireRoutes.js';
-
+import openai from './routes/openaiRoutes.js'
 
 app.use('/plan', plan_affaire)
+app.use('/api-openai', openai)
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(initial_path, "index.html"));
-// })
-// app.get("/simulateur", (req, res) => {
-//   res.sendFile(join(initial_path, "simulation.html"));
-// });
-
-// app.get("/Administrateur", (req, res) => {
-//   res.sendFile(join(initial_path, "Administrator.html"));
-// });
-
-// app.get("/simulateur_irf", (req, res) => {
-//   res.sendFile(join(initial_path, "simulateur_irf.html"));
-// });
-
-// app.get("/simulateur_iba", (req, res) => {
-//   res.sendFile(join(initial_path, "simulateur_iba.html"));
-// });
-
-// app.get("/simulateur_vps", (req, res) => {
-//   res.sendFile(join(initial_path, "simulateur_vps.html"));
-// });
-
-// app.get("/simulateur_is", (req, res) => {
-//   res.sendFile(join(initial_path, "simulateur_is.html"));
-// });
 
 
 
