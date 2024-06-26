@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SEI</title>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLogoDGI.jpg?alt=media&token=93baf2b2-67f9-4e65-b62d-6895ad910a9b&_gl=1*hsrack*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzU2NjYuNDguMC4w" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><img class="" style="width: 170px; height: 50px; border-radius: 0%; margin-right: 4px;" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FDGI_img.jpg?alt=media&token=47e891d4-7f29-4e4b-b58a-80d6824e993f&_gl=1*1r6q6or*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzUxOTYuMzAuMC4w"></img></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404 Page</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link active">Contact</a>
+            </div>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Contact</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Acceuil</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Contactez nous</h6>
+                <h1 class="mb-5">Contactez nous et nous vous accompagnerons</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5>Get In Touch</h5>
+                    <p class="mb-4">
+                        </p>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                            <i class="fa fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Siège</h5>
+                            <p class="mb-0">Bénin</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Mobile</h5>
+                            <p class="mb-0"></p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                            <i class="fa fa-envelope-open text-white"></i>
+                            <!-- <i class="fa-solid fa-envelope-open-text fa-bounce"></i> -->
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Email</h5>
+                            <p class="mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+
+            
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <iframe class="position-relative rounded w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.561465237715!2d2.344244573919077!3d6.4503023935411035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1024a9ee062e0f73%3A0x9b7563c6638bdf81!2sCocotomey!5e0!3m2!1sfr!2sbj!4v1694117770217!5m2!1sfr!2sbj" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+                </div>
+                <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <label for="name">Votre Nom</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <label for="email">Votre Email</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Sujet">
+                                    <label for="subject">Sujet du message</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <select class="form-floating" name=""  id="number_contact_index">
+                                    <option value="229">Bénin (+229)</option>
+                                    <option value="93">Afghanistan (+93)</option>
+                                    <option value="355">Albanie (+355)</option>
+                                    <option value="213">Algérie (+213)</option>
+                                    <option value="376">Andorre (+376)</option>
+                                    <option value="244">Angola (+244)</option>
+                                    <option value="1">Antigua-et-Barbuda (+1)</option>
+                                    <option value="54">Argentine (+54)</option>
+                                    <option value="374">Arménie (+374)</option>
+                                    <option value="61">Australie (+61)</option>
+                                    <option value="43">Autriche (+43)</option>
+                                    <option value="994">Azerbaïdjan (+994)</option>
+                                    <option value="1">Bahamas (+1)</option>
+                                    <option value="973">Bahreïn (+973)</option>
+                                    <option value="880">Bangladesh (+880)</option>
+                                    <option value="1">Barbade (+1)</option>
+                                    <option value="375">Biélorussie (+375)</option>
+                                    <option value="32">Belgique (+32)</option>
+                                    <option value="501">Belize (+501)</option>
+                                    <option value="975">Bhoutan (+975)</option>
+                                    <option value="591">Bolivie (+591)</option>
+                                    <option value="387">Bosnie-Herzégovine (+387)</option>
+                                    <option value="267">Botswana (+267)</option>
+                                    <option value="55">Brésil (+55)</option>
+                                    <option value="673">Brunei (+673)</option>
+                                    <option value="359">Bulgarie (+359)</option>
+                                    <option value="226">Burkina Faso (+226)</option>
+                                    <option value="257">Burundi (+257)</option>
+                                    <option value="855">Cambodge (+855)</option>
+                                    <option value="237">Cameroun (+237)</option>
+                                    <option value="1">Canada (+1)</option>
+                                    <option value="238">Cap-Vert (+238)</option>
+                                    <option value="236">République centrafricaine (+236)</option>
+                                    <option value="235">Tchad (+235)</option>
+                                    <option value="56">Chili (+56)</option>
+                                    <option value="86">Chine (+86)</option>
+                                    <option value="57">Colombie (+57)</option>
+                                    <option value="269">Comores (+269)</option>
+                                    <option value="242">Congo (Congo-Brazzaville) (+242)</option>
+                                    <option value="506">Costa Rica (+506)</option>
+                                    <option value="385">Croatie (+385)</option>
+                                    <option value="53">Cuba (+53)</option>
+                                    <option value="357">Chypre (+357)</option>
+                                    <option value="420">République tchèque (+420)</option>
+                                    <option value="243">RDC(Congo-Kinshasa) (+243)</option>
+                                    <option value="45">Danemark (+45)</option>
+                                    <option value="253">Djibouti (+253)</option>
+                                    <option value="1">Dominique (+1)</option>
+                                    <option value="1">République dominicaine (+1)</option>
+                                    <option value="670">Timor oriental (Timor-Leste) (+670)</option>
+                                    <option value="593">Équateur (+593)</option>
+                                    <option value="20">Égypte (+20)</option>
+                                    <option value="503">Salvador (+503)</option>
+                                    <option value="240">Guinée équatoriale (+240)</option>
+                                    <option value="291">Érythrée (+291)</option>
+                                    <option value="372">Estonie (+372)</option>
+                                    <option value="268">Eswatini (+268)</option>
+                                    <option value="251">Éthiopie (+251)</option>
+                                    <option value="679">Fidji (+679)</option>
+                                    <option value="358">Finlande (+358)</option>
+                                    <option value="33">France (+33)</option>
+                                    <option value="241">Gabon (+241)</option>
+                                    <option value="220">Gambie (+220)</option>
+                                    <option value="995">Géorgie (+995)</option>
+                                    <option value="49">Allemagne (+49)</option>
+                                    <option value="233">Ghana (+233)</option>
+                                    <option value="30">Grèce (+30)</option>
+                                    <option value="1">Grenade (+1)</option>
+                                    <option value="502">Guatemala (+502)</option>
+                                    <option value="224">Guinée (+224)</option>
+                                    <option value="245">Guinée-Bissau (+245)</option>
+                                    <option value="592">Guyana (+592)</option>
+                                    <option value="509">Haïti (+509)</option>
+                                    <option value="504">Honduras (+504)</option>
+                                    <option value="36">Hongrie (+36)</option>
+                                    <option value="354">Islande (+354)</option>
+                                    <option value="91">Inde (+91)</option>
+                                    <option value="62">Indonésie (+62)</option>
+                                    <option value="98">Iran (+98)</option>
+                                    <option value="964">Irak (+964)</option>
+                                    <option value="353">Irlande (+353)</option>
+                                    <option value="972">Israël (+972)</option>
+                                    <option value="39">Italie (+39)</option>
+                                    <option value="225">Côte d'Ivoire (+225)</option>
+                                    <option value="1">Jamaïque (+1)</option>
+                                    <option value="81">Japon (+81)</option>
+                                    <option value="962">Jordanie (+962)</option>
+                                    <option value="7">Kazakhstan (+7)</option>
+                                    <option value="254">Kenya (+254)</option>
+                                    <option value="686">Kiribati (+686)</option>
+                                    <option value="383">Kosovo (+383)</option>
+                                    <option value="965">Koweït (+965)</option>
+                                    <option value="996">Kirghizistan (+996)</option>
+                                    <option value="856">Laos (+856)</option>
+                                    <option value="371">Lettonie (+371)</option>
+                                    <option value="961">Liban (+961)</option>
+                                    <option value="266">Lesotho (+266)</option>
+                                    <option value="231">Liberia (+231)</option>
+                                    <option value="218">Libye (+218)</option>
+                                    <option value="423">Liechtenstein (+423)</option>
+                                    <option value="370">Lituanie (+370)</option>
+                                    <option value="352">Luxembourg (+352)</option>
+                                    <option value="261">Madagascar (+261)</option>
+                                    <option value="265">Malawi (+265)</option>
+                                    <option value="60">Malaisie (+60)</option>
+                                    <option value="960">Maldives (+960)</option>
+                                    <option value="223">Mali (+223)</option>
+                                    <option value="356">Malte (+356)</option>
+                                    <option value="692">Îles Marshall (+692)</option>
+                                    <option value="222">Mauritanie (+222)</option>
+                                    <option value="230">Maurice (+230)</option>
+                                    <option value="52">Mexique (+52)</option>
+                                    <option value="691">Micronésie (+691)</option>
+                                    <option value="373">Moldavie (+373)</option>
+                                    <option value="377">Monaco (+377)</option>
+                                    <option value="976">Mongolie (+976)</option>
+                                    <option value="382">Monténégro (+382)</option>
+                                    <option value="212">Maroc (+212)</option>
+                                    <option value="258">Mozambique (+258)</option>
+                                    <option value="95">Myanmar (Birmanie) (+95)</option>
+                                    <option value="264">Namibie (+264)</option>
+                                    <option value="674">Nauru (+674)</option>
+                                    <option value="977">Népal (+977)</option>
+                                    <option value="31">Pays-Bas (+31)</option>
+                                    <option value="64">Nouvelle-Zélande (+64)</option>
+                                    <option value="505">Nicaragua (+505)</option>
+                                    <option value="227">Niger (+227)</option>
+                                    <option value="234">Nigeria (+234)</option>
+                                    <option value="389">Macédoine du Nord (+389)</option>
+                                    <option value="47">Norvège (+47)</option>
+                                    <option value="968">Oman (+968)</option>
+                                    <option value="92">Pakistan (+92)</option>
+                                    <option value="680">Palaos (+680)</option>
+                                    <option value="970">Palestine (+970)</option>
+                                    <option value="507">Panama (+507)</option>
+                                    <option value="675">Papouasie-Nouvelle-Guinée (+675)</option>
+                                    <option value="595">Paraguay (+595)</option>
+                                    <option value="51">Pérou (+51)</option>
+                                    <option value="63">Philippines (+63)</option>
+                                    <option value="48">Pologne (+48)</option>
+                                    <option value="351">Portugal (+351)</option>
+                                    <option value="974">Qatar (+974)</option>
+                                    <option value="40">Roumanie (+40)</option>
+                                    <option value="7">Russie (+7)</option>
+                                    <option value="250">Rwanda (+250)</option>
+                                    <option value="1">Saint-Christophe-et-Niévès (+1)</option>
+                                    <option value="1">Sainte-Lucie (+1)</option>              
+                                    <option value="685">Samoa (+685)</option>
+                                    <option value="378">Saint-Marin (+378)</option>
+                                    <option value="239">Sao Tomé-et-Principe (+239)</option>
+                                    <option value="966">Arabie saoudite (+966)</option>
+                                    <option value="221">Sénégal (+221)</option>
+                                    <option value="381">Serbie (+381)</option>
+                                    <option value="248">Seychelles (+248)</option>
+                                    <option value="232">Sierra Leone (+232)</option>
+                                    <option value="65">Singapour (+65)</option>
+                                    <option value="421">Slovaquie (+421)</option>
+                                    <option value="386">Slovénie (+386)</option>
+                                    <option value="677">Îles Salomon (+677)</option>
+                                    <option value="252">Somalie (+252)</option>
+                                    <option value="27">Afrique du Sud (+27)</option>
+                                    <option value="82">Corée du Sud (+82)</option>
+                                    <option value="211">Soudan du Sud (+211)</option>
+                                    <option value="34">Espagne (+34)</option>
+                                    <option value="94">Sri Lanka (+94)</option>
+                                    <option value="249">Soudan (+249)</option>
+                                    <option value="597">Suriname (+597)</option>
+                                    <option value="46">Suède (+46)</option>
+                                    <option value="41">Suisse (+41)</option>
+                                    <option value="963">Syrie (+963)</option>
+                                    <option value="886">Taïwan (+886)</option>
+                                    <option value="992">Tadjikistan (+992)</option>
+                                    <option value="255">Tanzanie (+255)</option>
+                                    <option value="66">Thaïlande (+66)</option>
+                                    <option value="228">Togo (+228)</option>
+                                    <option value="676">Tonga (+676)</option>
+                                    <option value="1">Trinité-et-Tobago (+1)</option>
+                                    <option value="216">Tunisie (+216)</option>
+                                    <option value="90">Turquie (+90)</option>
+                                    <option value="993">Turkménistan (+993)</option>
+                                    <option value="688">Tuvalu (+688)</option>
+                                    <option value="256">Ouganda (+256)</option>
+                                    <option value="380">Ukraine (+380)</option>
+                                    <option value="971">Émirats arabes unis (+971)</option>
+                                    <option value="44">Royaume-Uni (+44)</option>
+                                    <option value="1">États-Unis d'Amérique (+1)</option>
+                                    <option value="598">Uruguay (+598)</option>
+                                    <option value="998">Ouzbékistan (+998)</option>
+                                    <option value="678">Vanuatu (+678)</option>
+                                    <option value="379">Cité du Vatican (+379)</option>
+                                    <option value="58">Venezuela (+58)</option>
+                                    <option value="84">Vietnam (+84)</option>
+                                    <option value="967">Yémen (+967)</option>
+                                    <option value="260">Zambie (+260)</option>
+                                    <option value="263">Zimbabwe (+263)</option>
+                                  </select>
+                                  <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="number" placeholder="numéro de téléphone">
+                                        <label for="subject">numéro de téléphone</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button id="submit" class="btn btn-primary w-100 py-3" type="submit">Envoyer Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+  
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <link href="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FLogoDGI.jpg?alt=media&token=93baf2b2-67f9-4e65-b62d-6895ad910a9b&_gl=1*hsrack*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODczNDk3OS4yMC4xLjE2OTg3MzU2NjYuNDguMC4w" rel="icon">
+
+                <!-- <h4 class="text-white mb-3">Des Liens Rapides</h4>
+                <a class="btn btn-link" href="#about">A propos du SEI</a> -->
+                <a class="btn btn-link" href="contact.html">Contactez Nous</a>
+                <a class="btn btn-link" href="">Privacy Polic</a>
+                <a class="btn btn-link" href="">Terms & Condition</a>
+                <a class="btn btn-link" href="">FAQs & Help</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Contact</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Bénin, </p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i></p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i></p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Le Bénin</h4>
+                <div class="row g-2 pt-2">
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FImage%20B%C3%A9nin%202.jpg?alt=media&token=ee097c0a-ba97-460a-a32d-b81456d59807&_gl=1*h1qr8p*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODc3NTI3Ny4yNC4xLjE2OTg3NzUzMzguNTkuMC4w" alt="">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FImage%20du%20B%C3%A9nin%201.jpg?alt=media&token=7b40924c-a6cf-41e3-be3f-d469e1f3c078&_gl=1*nuuhej*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODc3NTI3Ny4yNC4xLjE2OTg3NzU4NzMuNTkuMC4w" alt="">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FImage%20du%20B%C3%A9nin%203.jpg?alt=media&token=991f917d-03ab-415d-b2ad-fa10dffccbb4&_gl=1*mvysio*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODc3NTI3Ny4yNC4xLjE2OTg3NzU5MjYuNi4wLjA." alt="">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FImages%20du%20B%C3%A9nin%205.jpeg?alt=media&token=0253598e-ccf9-4132-a514-2bf41dd4331b&_gl=1*ln9if9*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODc3NTI3Ny4yNC4xLjE2OTg3NzU5OTAuMzIuMC4w" alt="">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FImage%20du%20B%C3%A9nin%206.jpg?alt=media&token=2955c12b-8592-4f9f-b3bc-889f05dd824a&_gl=1*1peuk66*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODc3NTI3Ny4yNC4xLjE2OTg3NzU5NjIuNjAuMC4w" alt="">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="https://firebasestorage.googleapis.com/v0/b/seidev.appspot.com/o/Group1-Fiscathon%2FImage-du-B%C3%A9nin-4.png?alt=media&token=abba568b-6444-45aa-9cdb-7f86aa3d2517&_gl=1*1j3wyb1*_ga*ODE3MzM0NTE2LjE2OTQwMjg1NjQ.*_ga_CW55HF8NVT*MTY5ODc3NTI3Ny4yNC4xLjE2OTg3NzYwMTUuNy4wLjA." alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Newsletter</h4>
+                <p>Restez informer de nos dernières activités</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <input id="mailNewsletter" class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre email">
+                    <button type="button" id="newsletter" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#"></a>Tous droits réservés.
+
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    Réalisé par <a class="border-bottom" href="https://www.impots.bj">www.impots.bj</a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                        <a href="">Acceuil</a>
+                        <a href="">Cookies</a>
+                        <a href="">Help</a>
+                        <a href="">FQAs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>
